@@ -1,0 +1,11 @@
+::StoryTitle
+TEST STORY
+
+:: Start
+First passage here
+
+[[This is a link|Next Passage]]
+
+
+:: Next Passage
+You clicked the link!
