@@ -147,10 +147,11 @@ You found nothing
 &lt;&lt;set $rnd to random(1,2)&gt;&gt;
 your random branch is: &lt;&lt;print $rnd&gt;&gt;
 &lt;&lt;if $rnd is 1&gt;&gt;
-[[Go to your inspect brach 1|Inspect1]]
+[[Go to your inspect branch 1|Inspect1]]
 &lt;&lt;else&gt;&gt;
-[[Go to your inspect brach 2|Inspect2]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Hours" tags="" position="975,100" size="100,100">&lt;span id=&quot;hours_resource&quot;&gt;Plane landing in $hours_left hours. &lt;/span&gt;</tw-passagedata><tw-passagedata pid="9" name="Timer" tags="" position="1100,100" size="100,100">&lt;&lt;set $seconds to 30&gt;&gt;
+[[Go to your inspect branch 2|Inspect2]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Hours" tags="" position="975,100" size="100,100">&lt;&lt;if $hours_left &lt;0 &gt;&gt;&lt;&lt;set $hours_left to 0&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;span id=&quot;hours_resource&quot;&gt;Plane landing in $hours_left hours. &lt;/span&gt;</tw-passagedata><tw-passagedata pid="9" name="Timer" tags="" position="1100,100" size="100,100">&lt;&lt;set $seconds to 30&gt;&gt;
 &lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat 1s&gt;&gt;
