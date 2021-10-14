@@ -10,9 +10,7 @@
 	color: limegreen;
 	font-family: monospace, monospace;
 }
-#passage-centered{
-	text-align: center;
-}
+
 .centered {
 	text-align: center;
 }
@@ -36,6 +34,7 @@ Soaring Shadow DEMO
 
 :: StoryInit
 <<set $seconds to 30>>
+<<set $hours_left to 5>>
 
 :: Start[centered]
 <<type 70ms start 2s>>
@@ -47,21 +46,30 @@ Soaring Shadow DEMO
 
 :: begin
 This is where the story begins... A man got killed
+<<include "Hours">>
 
 <<include "Timer">>
 
 [[Inspect(low risk)|rndInspect]] [[Seeking(high risk)|Seeking]]
 
 :: Inspect1
+<<set $hours_left to $hours_left - 1>>
+<<include "Hours">>
 You found 1 clue
 
 :: Inspect2
+<<set $hours_left to $hours_left - 1.5>>
+<<include "Hours">>
 You found 2 clues
 
 :: Seeking
+<<set $hours_left to $hours_left - 5>>
+<<include "Hours">>
 You found nothing
+[[continue|Time up]]
 
 :: rndInspect
+<<include "Hours">>
 <<set $rnd to random(1,2)>>
 your random branch is: <<print $rnd>>
 <<if $rnd is 1>>
@@ -69,6 +77,11 @@ your random branch is: <<print $rnd>>
 <<else>>
 [[Go to your inspect brach 2|Inspect2]]
 <</if>>
+
+
+:: Hours
+<span id="hours_resource">Plane landing in $hours_left hours. </span>
+
 
 
 :: Timer
