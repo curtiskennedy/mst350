@@ -38,16 +38,29 @@ Soaring Shadow DEMO
 <<type 70ms start 2s>>
 	Welcome to the demo!
 
-	[[Click here to begin|hi]]
+	[[Click here to begin|begin]]
 <</type>>
 
 
-:: hi
-You made it!
+:: begin
+This is where the stroy begins... A man got killed
 
-<<timed 5s>>
-	[[out of time|out of time]]
-<</timed>>
+[[Inspect(low risk)|rndInspect]] [[Seeking(high risk)|Seeking]]
 
-:: out of time
+:: Inspect1
+You found 1 clue
 
+:: Inspect2
+You found 2 clues
+
+:: Seeking
+You found nothing
+
+:: rndInspect
+<<set $rnd to random(1,2)>>
+your random branch is: <<print $rnd>>
+<<if $rnd is 1>>
+[[Go to your inspect brach 1|Inspect1]]
+<<else>>
+[[Go to your inspect brach 2|Inspect2]]
+<</if>>
