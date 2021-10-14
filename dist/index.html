@@ -150,7 +150,8 @@ your random branch is: &lt;&lt;print $rnd&gt;&gt;
 [[Go to your inspect brach 1|Inspect1]]
 &lt;&lt;else&gt;&gt;
 [[Go to your inspect brach 2|Inspect2]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Hours" tags="" position="975,100" size="100,100">&lt;span id=&quot;hours_resource&quot;&gt;Plane landing in $hours_left hours. &lt;/span&gt;</tw-passagedata><tw-passagedata pid="9" name="Timer" tags="" position="1100,100" size="100,100">&lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Hours" tags="" position="975,100" size="100,100">&lt;span id=&quot;hours_resource&quot;&gt;Plane landing in $hours_left hours. &lt;/span&gt;</tw-passagedata><tw-passagedata pid="9" name="Timer" tags="" position="1100,100" size="100,100">&lt;&lt;set $seconds to 30&gt;&gt;
+&lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat 1s&gt;&gt;
         &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
