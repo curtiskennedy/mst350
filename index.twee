@@ -10,9 +10,7 @@
 	color: limegreen;
 	font-family: monospace, monospace;
 }
-#passage-centered{
-	text-align: center;
-}
+
 .centered {
 	text-align: center;
 }
@@ -39,7 +37,7 @@ Soaring Shadow DEMO
 
 :: Start[centered]
 <<type 70ms start 2s>>
-	Welcome to the demo!
+	Welcome to the demo. Please make your first decision!
 
 	[[Click here to begin|begin]]
 <</type>>
