@@ -34,6 +34,9 @@
 :: StoryTitle
 Soaring Shadow DEMO
 
+:: StoryInit
+<<set $seconds to 30>>
+
 :: Start[centered]
 <<type 70ms start 2s>>
 	Welcome to the demo!
@@ -43,7 +46,9 @@ Soaring Shadow DEMO
 
 
 :: begin
-This is where the stroy begins... A man got killed
+This is where the story begins... A man got killed
+
+<<include "Timer">>
 
 [[Inspect(low risk)|rndInspect]] [[Seeking(high risk)|Seeking]]
 
@@ -64,3 +69,25 @@ your random branch is: <<print $rnd>>
 <<else>>
 [[Go to your inspect brach 2|Inspect2]]
 <</if>>
+
+
+:: Timer
+<span id="countdown">You have $seconds seconds to make your decision.</span>
+<<silently>>
+    <<repeat 1s>>
+        <<set $seconds to $seconds - 1>>
+        <<if $seconds gt 0>>
+            <<replace "#countdown">>You have $seconds seconds to make your decision.<</replace>>
+        <<else>>
+            <<replace "#countdown">><</replace>>
+            <<goto "Time up">>
+            <<stop>>
+        <</if>>
+    <</repeat>>
+<</silently>>
+
+
+:: Time up
+The plane has crashed!
+
+
