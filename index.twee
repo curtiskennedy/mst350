@@ -80,13 +80,14 @@ You found nothing
 <<set $rnd to random(1,2)>>
 your random branch is: <<print $rnd>>
 <<if $rnd is 1>>
-[[Go to your inspect brach 1|Inspect1]]
+[[Go to your inspect branch 1|Inspect1]]
 <<else>>
-[[Go to your inspect brach 2|Inspect2]]
+[[Go to your inspect branch 2|Inspect2]]
 <</if>>
 
 
 :: Hours
+<<if $hours_left <0 >><<set $hours_left to 0>><</if>>
 <span id="hours_resource">Plane landing in $hours_left hours. </span>
 
 
