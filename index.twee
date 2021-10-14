@@ -46,21 +46,28 @@ Soaring Shadow DEMO
 
 :: begin
 This is where the story begins... A man got killed
+
 <<include "Hours">>
 
 <<include "Timer">>
 
-[[Inspect(low risk)|rndInspect]] [[Seeking(high risk)|Seeking]]
+<<if $hours_left <= 0>>
+	<<goto "Time up">>
+<<else>>
+	[[Inspect(2.5hrs)|rndInspect]] [[Seeking(5hrs)|Seeking]]
+<</if>>
 
 :: Inspect1
-<<set $hours_left to $hours_left - 1>>
+<<set $hours_left to $hours_left - 2.5>>
 <<include "Hours">>
 You found 1 clue
+[[Continue|begin]]
 
 :: Inspect2
-<<set $hours_left to $hours_left - 1.5>>
+<<set $hours_left to $hours_left - 2.5>>
 <<include "Hours">>
 You found 2 clues
+[[Continue|begin]]
 
 :: Seeking
 <<set $hours_left to $hours_left - 5>>
@@ -101,6 +108,7 @@ your random branch is: <<print $rnd>>
 
 
 :: Time up[centered]
-The plane has crashed!
+The plane has crashed! 
+You are running out of your time.
 
 
