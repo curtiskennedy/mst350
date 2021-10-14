@@ -1,16 +1,53 @@
 :: StoryData
 {
-	"ifid": "37226FE3-68A1-4E7B-9D4C-47CD273F0339"
+	"ifid": "37226FE3-68A1-4E7B-9D4C-47CD273F0339",
+	"format": "SugarCube",
+	"format-version": "2.35.0"
 }
+:: UserStylesheet[stylesheet]
 
-::StoryTitle
-TEST STORY
+.macro-type {
+	color: limegreen;
+	font-family: monospace, monospace;
+}
+#passage-centered{
+	text-align: center;
+}
+.centered {
+	text-align: center;
+}
+.passage a {
+	color: blue;
+}
+.passage a:hover {
+	color: red;
+}
+.passage a:active {
+	color: green;
+}
+/* .macro-type-cursor:after {
+	color: limegreen;
+	content: "\269C\FE0F"; /* Fleur-de-lis emoji */
+	font-family: monospace, monospace;
+}  */
 
-:: Start
-First passage here
+:: StoryTitle
+Soaring Shadow DEMO
 
-[[This is a link|Next Passage]]
+:: Start[centered]
+<<type 70ms start 2s>>
+	Welcome to the demo!
+
+	[[Click here to begin|hi]]
+<</type>>
 
 
-:: Next Passage
-Fourth build test pass!
+:: hi
+You made it!
+
+<<timed 5s>>
+	[[out of time|out of time]]
+<</timed>>
+
+:: out of time
+
