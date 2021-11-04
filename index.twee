@@ -14,103 +14,146 @@
 .centered {
 	text-align: center;
 }
-.passage a {
-	color: blue;
+/* .passage a {
+	color: #DCDCDC;
 }
 .passage a:hover {
 	color: red;
 }
 .passage a:active {
 	color: green;
-}
-/* .macro-type-cursor:after {
-	color: limegreen;
-	content: "\269C\FE0F"; /* Fleur-de-lis emoji */
-	font-family: monospace, monospace;
-}  */
+} */
 
 :: StoryTitle
-Soaring Shadow DEMO
+Soaring Shadow Prototype
 
 :: StoryInit
-<<set $seconds to 30>>
-<<set $hours_left to 5>>
+/* <<set $seconds to 30>>
+<<set $hours_left to 5>> */
 
 :: Start[centered]
-<<type 70ms start 2s>>
-	Welcome to the demo!
+Soaring Shadow Game Prototype
 
-	[[Click here to begin|begin]]
-<</type>>
+[[Click here to begin|begin]]
+
 
 
 :: begin
-This is where the story begins... A man got killed
+You, detective Dwayne Shadow, enter a hallway to [[board|FA1]] a private plane.
 
-<<include "Hours">>
+:: FA1
+Flight Attendant: Dwayne Shadow, thank you very much for flying with Soaring Air today, we know that you are on your way to the world famous detective festival, so we shall make sure there is as little turbulence as possible. For your safety. May I get you something to drink?
 
-<<include "Timer">>
+[[Sure|drink]]
 
-<<if $hours_left <= 0>>
-	<<goto "Time up">>
-<<else>>
-	[[Inspect(2.5hrs)|rndInspect]] [[Seeking(5hrs)|Seeking]]
-<</if>>
+:: drink
+The flight attendant gives you a martini, seems a bit stronger than usual, did you order a double?
 
-:: Inspect1
-<<set $hours_left to $hours_left - 2.5>>
-<<include "Hours">>
-You found 1 clue
-[[Continue|begin]]
+[[sip drink|sip]]
 
-:: Inspect2
-<<set $hours_left to $hours_left - 2.5>>
-<<include "Hours">>
-You found 2 clues
-[[Continue|begin]]
+:: sip
+Wait, there is a key at the bottom of the glass... but why?
 
-:: Seeking
-<<set $hours_left to $hours_left - 5>>
-<<include "Hours">>
-You found nothing
-[[continue|Time up]]
+[[take key|take_key]]
 
-:: rndInspect
-<<include "Hours">>
-<<set $rnd to random(1,2)>>
-your random branch is: <<print $rnd>>
-<<if $rnd is 1>>
-[[Go to your inspect branch 1|Inspect1]]
-<<else>>
-[[Go to your inspect branch 2|Inspect2]]
-<</if>>
+:: take_key
+You walk into the main room of the plane to see four other passengers seated.
+Doctor Plum, Chef Sun, Princess Orchid, and Athlete Andreas.
 
+[[nod at them|greet]]
 
-:: Hours
-<<if $hours_left <0 >><<set $hours_left to 0>><</if>>
-<span id="hours_resource">Plane landing in $hours_left hours. </span>
+:: greet
+Doctor Plum: Well isn't it about time our last guest arrived
 
+Princess Orchid: He's a tad bit late to the party
 
+Chef Sun: I'll have a steak cooked up for you
 
-:: Timer
-<<set $seconds to 30>>
-<span id="countdown">You have $seconds seconds to make your decision.</span>
-<<silently>>
-    <<repeat 1s>>
-        <<set $seconds to $seconds - 1>>
-        <<if $seconds gt 0>>
-            <<replace "#countdown">>You have $seconds seconds to make your decision.<</replace>>
-        <<else>>
-            <<replace "#countdown">><</replace>>
-            <<goto "Time up">>
-            <<stop>>
-        <</if>>
-    <</repeat>>
-<</silently>>
+Athlete Andreas: Do you talk at all buddy?
+
+[[...|silence]]
+
+:: silence
+There is a loud crash, the lights flicker and go out, 
+screams are heard throughout the plane
+
+[[compose yourself|lights_on]]
+
+:: lights_on
+The lights turn back on
+
+You take a [[look around|look]] to see what has happened, luggage has fallen down everywhere.
+
+:: look
+Athlete Andreas has been killed!
+
+Princess Orchid: Who could have done this?
+
+Chef Sun: You sound suspicious yourself
+
+Doctor Plum: Even I cannot revive him...
 
 
-:: Time up[centered]
-The plane has crashed! 
-You are running out of your time.
+[[let me do some investigating|investigate]]
 
+:: investigate
+You search the plane, and find a cabinet with a lock.
 
+Use the key you found earlier?
+
+[[Yes|use_key]]
+
+:: use_key
+You find a note:
+
+"This detective joining our flight has no business being here, 
+I can't wait to frame him for the mysterious disappearance of one of our passengers"
+
+[[Interesting...|interesting]]
+
+:: interesting
+Talk to [[Princess Orchid|Orchid]], [[Doctor Plum|Plum]], [[Chef Sun|Sun]] or [[move on|done]]?
+
+:: Orchid
+Princess Orchid: I was always very close with Athlete Andreas, 
+in fact he was going to invite me to his next competition!
+
+[[continue|interesting]]
+
+:: Plum
+Doctor Plum: I should have been ready to aid any person who needs help, 
+this is my fault!
+
+[[continue|interesting]]
+
+:: Sun
+Chef Sun: This is a travesty, all I wanted to do was cook for people.
+
+[[continue|interesting]]
+
+:: done
+Check the Bathroom or [[Kitchen|kitchen]]?
+
+:: kitchen
+You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
+
+[[Make your decision|decide]]? or keep searching?
+
+:: decide
+I believe the killer is...
+
+[[Chef Sun|win]]
+
+[[Princess Orchid|lose]]
+
+[[Doctor Plum|lose]]
+
+:: win
+Correct!
+
+The police arrive at the plane where Chef Sun is arrested and taken away, 
+Shadow makes his detective conference in time and is given a badge of honour for his work, 
+solving another mystery.
+
+:: lose
+Incorrect!
