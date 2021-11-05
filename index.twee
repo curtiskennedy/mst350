@@ -30,8 +30,18 @@ Soaring Shadow Prototype
 :: StoryInit
 /* <<set $seconds to 30>>
 <<set $hours_left to 5>> */
+<<cacheaudio "title" "media/title.wav">>
+<<cacheaudio "happyhour" "media/a happy hour.wav">>
+<<cacheaudio "exp1" "media/exploring_01.wav">>
+<<cacheaudio "exp2" "media/exploring2.wav">>
+<<cacheaudio "exp3" "media/exploring3.wav">>
+<<cacheaudio "mys1" "media/mystery3.wav">>
+<<cacheaudio "decision" "media/decision.mp3">>
 
 :: Start[centered]
+/*<<audio "title" play>> this one not good will find other*/
+<<audio "exp1" play>>
+<<audio "exp1" loop>>
 Soaring Shadow Game Prototype
 
 [[Click here to begin|begin]]
@@ -39,6 +49,7 @@ Soaring Shadow Game Prototype
 
 
 :: begin
+
 You, detective Dwayne Shadow, enter a hallway to [[board|FA1]] a private plane.
 
 :: FA1
@@ -74,6 +85,9 @@ Athlete Andreas: Do you talk at all buddy?
 [[...|silence]]
 
 :: silence
+<<audio "exp1" stop>>
+<<audio "exp2" play>>
+<<audio "exp2" loop>>
 There is a loud crash, the lights flicker and go out, 
 screams are heard throughout the plane
 
@@ -121,6 +135,9 @@ in fact he was going to invite me to his next competition!
 [[continue|interesting]]
 
 :: Plum
+<<audio "exp2" stop>>
+<<audio "exp3" play>>
+<<audio "exp3" loop>>
 Doctor Plum: I should have been ready to aid any person who needs help, 
 this is my fault!
 
@@ -140,6 +157,9 @@ You find a note for steak recipes, one that matches the handwriting from the oth
 [[Make your decision|decide]]? or keep searching?
 
 :: decide
+<<audio "exp3" stop>>
+<<audio "decision" play>>
+<<audio "decision" loop>>
 I believe the killer is...
 
 [[Chef Sun|win]]
@@ -149,6 +169,8 @@ I believe the killer is...
 [[Doctor Plum|lose]]
 
 :: win
+<<audio "decision" stop>>
+<<audio "happyhour" play>>
 Correct!
 
 The police arrive at the plane where Chef Sun is arrested and taken away, 
@@ -156,4 +178,6 @@ Shadow makes his detective conference in time and is given a badge of honour for
 solving another mystery.
 
 :: lose
+<<audio "decision" stop>>
+<<audio "mys1" play>>
 Incorrect!
