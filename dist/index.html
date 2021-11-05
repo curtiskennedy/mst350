@@ -202,7 +202,7 @@ A window breaks open and things are flying out...
 
 &lt;&lt;include Timer&gt;&gt;
 
-[[Note|choose_note]] or key</tw-passagedata><tw-passagedata pid="23" name="Timer" tags="" position="350,350" size="100,100">&lt;&lt;set $seconds to 15&gt;&gt;
+[[Note|choose_note]] or [[key|choose_key]]</tw-passagedata><tw-passagedata pid="23" name="Timer" tags="" position="350,350" size="100,100">&lt;&lt;set $seconds to 15&gt;&gt;
 &lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat 1s&gt;&gt;
@@ -219,7 +219,13 @@ A window breaks open and things are flying out...
 
 [[Make your choice|decide]]</tw-passagedata><tw-passagedata pid="25" name="choose_note" tags="" position="600,350" size="100,100">You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
 
-[[Make your decision|decide]]? or keep searching?</tw-passagedata><tw-passagedata pid="26" name="decide" tags="" position="725,350" size="100,100">&lt;&lt;audio &quot;exp3&quot; stop&gt;&gt;
+[[Make your decision|decide]]? or keep searching?</tw-passagedata><tw-passagedata pid="26" name="choose_key" tags="" position="725,350" size="100,100">The key allows you to acces a separate door, hidden behind the counter.
+
+Do you open the door?
+
+[[Yes|open_door]] or [[No|decide]]</tw-passagedata><tw-passagedata pid="27" name="open_door" tags="" position="850,350" size="100,100">The door flies open and you get sucked out of the plane and fall to your doom.
+
+The end.</tw-passagedata><tw-passagedata pid="28" name="decide" tags="" position="975,350" size="100,100">&lt;&lt;audio &quot;exp3&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;decision&quot; play&gt;&gt;
 &lt;&lt;audio &quot;decision&quot; loop&gt;&gt;
 I believe the killer is...
@@ -228,13 +234,13 @@ I believe the killer is...
 
 [[Princess Orchid|lose]]
 
-[[Doctor Plum|lose]]</tw-passagedata><tw-passagedata pid="27" name="win" tags="" position="850,350" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
+[[Doctor Plum|lose]]</tw-passagedata><tw-passagedata pid="29" name="win" tags="" position="1100,350" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;happyhour&quot; play&gt;&gt;
 Correct!
 
 The police arrive at the plane where Chef Sun is arrested and taken away, 
 Shadow makes his detective conference in time and is given a badge of honour for his work, 
-solving another mystery.</tw-passagedata><tw-passagedata pid="28" name="lose" tags="" position="975,350" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
+solving another mystery.</tw-passagedata><tw-passagedata pid="30" name="lose" tags="" position="1225,350" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;mys1&quot; play&gt;&gt;
 Incorrect!</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">

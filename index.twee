@@ -182,7 +182,7 @@ Which do you grab?
 
 <<include Timer>>
 
-[[Note|choose_note]] or key
+[[Note|choose_note]] or [[key|choose_key]]
 
 :: Timer
 <<set $seconds to 15>>
@@ -209,6 +209,18 @@ Both objects flew out the window...
 You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
 
 [[Make your decision|decide]]? or keep searching?
+
+:: choose_key
+The key allows you to acces a separate door, hidden behind the counter.
+
+Do you open the door?
+
+[[Yes|open_door]] or [[No|decide]]
+
+:: open_door
+The door flies open and you get sucked out of the plane and fall to your doom.
+
+The end.
 
 :: decide
 <<audio "exp3" stop>>
