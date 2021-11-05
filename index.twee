@@ -35,7 +35,7 @@ Soaring Shadow Prototype
 <<cacheaudio "exp1" "media/exploring_01.wav">>
 <<cacheaudio "exp2" "media/exploring2.wav">>
 <<cacheaudio "exp3" "media/exploring3.wav">>
-<<cacheaudio "mys1" "media/mystery3.wav">>
+<<cacheaudio "mys1" "media/mystery1.wav">>
 <<cacheaudio "decision" "media/decision.mp3">>
 <<set $seconds to 30>>
 <<set $hours_left to 5>>
@@ -89,9 +89,6 @@ Athlete Andreas: Do you talk at all buddy?
 [[say nothing|silence]]
 
 :: silence
-<<audio "exp1" stop>>
-<<audio "exp2" play>>
-<<audio "exp2" loop>>
 There is a loud crash, the lights flicker and go out, 
 screams are heard throughout the plane
 
@@ -103,6 +100,9 @@ The lights turn back on
 You take a [[look around|look]] to see what has happened, luggage has fallen down everywhere.
 
 :: look
+<<audio "exp1" stop>>
+<<audio "exp2" play>>
+<<audio "exp2" loop>>
 Athlete Andreas has been killed!
 
 Princess Orchid: Who could have done this?
@@ -144,6 +144,9 @@ Lights flicker, part of the engine was shut down, decreased time limit.
 [[continue|talk]]
 
 :: talk
+<<audio "exp2" stop>>
+<<audio "exp3" play>>
+<<audio "exp3" loop>>
 Talk to [[Princess Orchid|Orchid]], [[Doctor Plum|Plum]], [[Chef Sun|Sun]] or [[move on|done]]?
 
 :: Orchid
@@ -153,9 +156,6 @@ in fact he was going to invite me to his next competition!
 [[continue|interesting]]
 
 :: Plum
-<<audio "exp2" stop>>
-<<audio "exp3" play>>
-<<audio "exp3" loop>>
 Doctor Plum: I should have been ready to aid any person who needs help, 
 this is my fault!
 
