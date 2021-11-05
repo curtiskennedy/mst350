@@ -37,6 +37,8 @@ Soaring Shadow Prototype
 <<cacheaudio "exp3" "media/exploring3.wav">>
 <<cacheaudio "mys1" "media/mystery3.wav">>
 <<cacheaudio "decision" "media/decision.mp3">>
+<<set $seconds to 30>>
+<<set $hours_left to 5>>
 
 :: Start[centered]
 /*<<audio "title" play>> this one not good will find other*/
@@ -51,6 +53,8 @@ Soaring Shadow Game Prototype
 :: begin
 
 You, detective Dwayne Shadow, enter a hallway to [[board|FA1]] a private plane.
+
+5 Hours Remain
 
 :: FA1
 Flight Attendant: Dwayne Shadow, thank you very much for flying with Soaring Air today, we know that you are on your way to the world famous detective festival, so we shall make sure there is as little turbulence as possible. For your safety. May I get you something to drink?
@@ -82,7 +86,7 @@ Chef Sun: I'll have a steak cooked up for you
 
 Athlete Andreas: Do you talk at all buddy?
 
-[[...|silence]]
+[[say nothing|silence]]
 
 :: silence
 <<audio "exp1" stop>>
@@ -111,6 +115,8 @@ Doctor Plum: Even I cannot revive him...
 [[let me do some investigating|investigate]]
 
 :: investigate
+4 Hours Remain
+
 You search the plane, and find a cabinet with a lock.
 
 Use the key you found earlier?
@@ -126,6 +132,18 @@ I can't wait to frame him for the mysterious disappearance of one of our passeng
 [[Interesting...|interesting]]
 
 :: interesting
+You find a generator with 3 batteries as the power source, do you touch the batteries?
+
+[[Yes|touch_batteries]] or [[No|talk]]
+
+:: touch_batteries
+Lights flicker, part of the engine was shut down, decreased time limit.
+
+1.5 Hours Remain
+
+[[continue|talk]]
+
+:: talk
 Talk to [[Princess Orchid|Orchid]], [[Doctor Plum|Plum]], [[Chef Sun|Sun]] or [[move on|done]]?
 
 :: Orchid
@@ -152,6 +170,41 @@ Chef Sun: This is a travesty, all I wanted to do was cook for people.
 Check the Bathroom or [[Kitchen|kitchen]]?
 
 :: kitchen
+You see an open cabinet with a note and a key in it.
+
+A window breaks open and things are flying out...
+
+[[continue|choice]]
+
+:: choice
+Which do you grab?
+
+<<include Timer>>
+
+[[Note|choose_note]] or key
+
+:: Timer
+<<set $seconds to 15>>
+<span id="countdown">You have $seconds seconds to make your decision.</span>
+<<silently>>
+    <<repeat 1s>>
+        <<set $seconds to $seconds - 1>>
+        <<if $seconds gt 0>>
+            <<replace "#countdown">>You have $seconds seconds to make your decision.<</replace>>
+        <<else>>
+            <<replace "#countdown">><</replace>>
+            <<goto "Time up">>
+            <<stop>>
+        <</if>>
+    <</repeat>>
+<</silently>>
+
+:: Time up
+Both objects flew out the window...
+
+[[Make your choice|decide]]
+
+:: choose_note
 You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
 
 [[Make your decision|decide]]? or keep searching?
