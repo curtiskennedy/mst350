@@ -30,13 +30,13 @@ Soaring Shadow Prototype
 :: StoryInit
 /* <<set $seconds to 30>>
 <<set $hours_left to 5>> */
-<<cacheaudio "title" "https://github.com/curtiskennedy/mst350/blob/main/media/title.wav">>
-<<cacheaudio "happyhour" "https://github.com/curtiskennedy/mst350/blob/main/media/a happy hour.wav">>
-<<cacheaudio "exp1" "https://github.com/curtiskennedy/mst350/blob/main/media/exploring_01.wav">>
+<<cacheaudio "title" "https://github.com/curtiskennedy/mst350/blob/main/dist/media/a%20happy%20hour.WAV?raw=true">>
+<<cacheaudio "happyhour" "https://github.com/curtiskennedy/mst350/blob/main/dist/media/a%20happy%20hour.WAV?raw=true">>
+<<cacheaudio "exp1" "https://github.com/curtiskennedy/mst350/blob/main/dist/media/exploring.WAV?raw=true">>
 <<cacheaudio "exp2" "https://github.com/curtiskennedy/mst350/blob/main/media/exploring2.wav">>
 <<cacheaudio "exp3" "https://github.com/curtiskennedy/mst350/blob/main/media/exploring3.wav">>
 <<cacheaudio "mys1" "https://github.com/curtiskennedy/mst350/blob/main/media/mystery1.wav">>
-<<cacheaudio "decision" "https://github.com/curtiskennedy/mst350/blob/main/media/decision.mp3">>
+<<cacheaudio "decision" "https://github.com/curtiskennedy/mst350/blob/main/dist/media/decision.mp3?raw=true">>
 <<set $seconds to 30>>
 <<set $hours_left to 5>>
 
