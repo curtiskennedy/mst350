@@ -28,8 +28,8 @@
 Soaring Shadow Prototype
 
 :: StoryInit
-/* <<set $seconds to 30>>
-<<set $hours_left to 5>> */
+<<set $seconds to 30>>
+<<set $hours_left to 5>>
 
 :: Start[centered]
 Soaring Shadow Game Prototype
@@ -160,7 +160,30 @@ A window breaks open and things are flying out...
 :: choice
 Which do you grab?
 
+<<include Timer>>
+
 [[Note|choose_note]] or key
+
+:: Timer
+<<set $seconds to 15>>
+<span id="countdown">You have $seconds seconds to make your decision.</span>
+<<silently>>
+    <<repeat 1s>>
+        <<set $seconds to $seconds - 1>>
+        <<if $seconds gt 0>>
+            <<replace "#countdown">>You have $seconds seconds to make your decision.<</replace>>
+        <<else>>
+            <<replace "#countdown">><</replace>>
+            <<goto "Time up">>
+            <<stop>>
+        <</if>>
+    <</repeat>>
+<</silently>>
+
+:: Time up
+Both objects flew out the window...
+
+[[Make your choice|decide]]
 
 :: choose_note
 You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
