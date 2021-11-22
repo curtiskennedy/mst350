@@ -28,8 +28,7 @@
 Soaring Shadow Prototype
 
 :: StoryInit
-/* <<set $seconds to 30>>
-<<set $hours_left to 5>> */
+
 <<cacheaudio "title" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/a happy hour.WAV">>
 <<cacheaudio "happyhour" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/a happy hour.WAV">>
 <<cacheaudio "exp1" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring.WAV">>
@@ -37,9 +36,11 @@ Soaring Shadow Prototype
 <<cacheaudio "exp3" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring3.WAV">>
 <<cacheaudio "mys1" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/mystery1.WAV">>
 <<cacheaudio "decision" "mp3|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/decision.mp3">>
-
 <<set $seconds to 30>>
 <<set $hours_left to 5>>
+<<set $password to "">>
+<<set $num_password to "">>
+<<set $has_key to 0>>
 
 :: Start[centered]
 /*<<audio "title" play>> this one not good will find other*/
@@ -58,9 +59,14 @@ You, detective Dwayne Shadow, enter a hallway to [[board|FA1]] a private plane.
 5 Hours Remain
 
 :: FA1
-Flight Attendant: Dwayne Shadow, thank you very much for flying with Soaring Air today, we know that you are on your way to the world famous detective festival, so we shall make sure there is as little turbulence as possible. For your safety. May I get you something to drink?
+Flight Attendant: Dwayne Shadow, thank you very much for flying with Soaring Air today, we know that you are on your way to the world famous detective festival, so we shall make sure there is as little turbulence as possible. For your safety, please remember our password "Safety". May I get you something to drink?
 
-[[Sure|drink]]
+[[Sure|drink]] or [[No|no]]
+
+:: no
+Flight Attendant: Of course!! Enjoy your flight!
+
+[[continue|take off]]
 
 :: drink
 The flight attendant gives you a martini, seems a bit stronger than usual, did you order a double?
@@ -69,10 +75,11 @@ The flight attendant gives you a martini, seems a bit stronger than usual, did y
 
 :: sip
 Wait, there is a key at the bottom of the glass... but why?
+<<set $has_key to 1>>
 
-[[take key|take_key]]
+[[take key|take off]]
 
-:: take_key
+:: take off
 You walk into the main room of the plane to see four other passengers seated.
 Doctor Plum, Chef Sun, Princess Orchid, and Athlete Andreas.
 
@@ -81,7 +88,7 @@ Doctor Plum, Chef Sun, Princess Orchid, and Athlete Andreas.
 :: greet
 Doctor Plum: Well isn't it about time our last guest arrived
 
-Princess Orchid: He's a tad bit late to the party
+Princess Orchid: He's a tad bit late to the party. Expected from someone who isn't the best like me.
 
 Chef Sun: I'll have a steak cooked up for you
 
@@ -90,13 +97,68 @@ Athlete Andreas: Do you talk at all buddy?
 [[say nothing|silence]]
 
 :: silence
+You decide to walk around the airplan to inspect.
+
+The path leads you to the cabin. There, you notice the pilot sitting in the front of the plane.
+
+[[Approach the pilot|approach]]
+
+:: approach
+Detective Shadow: Hey, I was wondering if you knew how long we have left in the flight?
+
+Pilot: ...
+
+[["Sir?"|ask]]
+
+:: ask
+You notice the pilot is unconscious and the plane is descending at a rapid pace.
+
+[[Time to act fast!|quick choice]]
+
+:: quick choice
+Do you [[help the pilot|help pilot]] or do you [[steer the plane|steer plane]]?
+
+<<set $seconds to 15>>
+<<include Timer Crash>>
+
+:: help pilot
+You try to wake him up but notice there is a bullet wound on his head. Someone has been here.
+
+You look back forward and try to [[steer the plane|steer plane]]
+
+:: steer plane
+Enter the password to override auto control: <<textbox "$password" "" "Evaluate Password" autofocus>>
+
+press ENTER to submit password
+
+<<set $seconds to 15>>
+<<include Timer Crash>>
+
+:: Evaluate Password
+<<if $password is "Safety">>
+
+    Password Accepted --> Engines Stabilized
+
+    Detective Shadow: Finally, nothing bad can happen now
+    [[take a breath|crash]]
+
+	<<else>>
+
+		Wrong Password --> The plane crashes
+
+        You Lose.
+    
+<</if>>
+
+
+:: crash
 There is a loud crash, the lights flicker and go out, 
 screams are heard throughout the plane
 
 [[compose yourself|lights_on]]
 
 :: lights_on
-The lights turn back on
+The lights turn back on. You run back to the main room of the plane.
 
 You take a [[look around|look]] to see what has happened, luggage has fallen down everywhere.
 
@@ -113,16 +175,21 @@ Chef Sun: You sound suspicious yourself
 Doctor Plum: Even I cannot revive him...
 
 
-[[let me do some investigating|investigate]]
+[[I know who it is!|decide]] or [[let me do some investigating|investigate]]
 
 :: investigate
 4 Hours Remain
 
 You search the plane, and find a cabinet with a lock.
-
+<<if $has_key is 1>>
 Use the key you found earlier?
+[[Yes|use_key]] or [[No|interesting]]
 
-[[Yes|use_key]]
+<<else>>
+    [[I don't have a key|interesting]]
+<</if>>
+
+
 
 :: use_key
 You find a note:
@@ -154,38 +221,100 @@ Talk to [[Princess Orchid|Orchid]], [[Doctor Plum|Plum]], [[Chef Sun|Sun]] or [[
 Princess Orchid: I was always very close with Athlete Andreas, 
 in fact he was going to invite me to his next competition!
 
-[[continue|interesting]]
+[[continue|talk]]
 
 :: Plum
 Doctor Plum: I should have been ready to aid any person who needs help, 
 this is my fault!
 
-[[continue|interesting]]
+By the way, the bathroom door tends to lock on itself. If it does just type in the password 1508
+
+[[continue|talk]]
 
 :: Sun
 Chef Sun: This is a travesty, all I wanted to do was cook for people.
 
-[[continue|interesting]]
+[[continue|talk]]
 
 :: done
-Check the Bathroom or [[Kitchen|kitchen]]?
+Check the [[Bathroom|bathroom]] or [[Kitchen|kitchen]]?
+
+:: bathroom
+You close the door which activates a blue light system, there is something written on the glass in lipstick:
+
+"I am the best, nobody else can be"
+
+Detective Shadow: Humble...
+
+[[exit bathroom|exit bathroom]]
+
+:: exit bathroom
+You try to exit but the door is locked.
+
+Type in the password: <<textbox "$num_password" "" "Evaluate Num Password" autofocus>>
+<<set $seconds to 15>>
+
+<<include Timer Bathroom>>
+
+
+:: Evaluate Num Password
+<<if $num_password is "1508">>
+
+    Password Accepted
+
+    You head out and return to the main lobby to see that Doctor Plum has been murdered!
+    [[oh dear|rip plum]]
+
+	<<else>>
+
+		Wrong Password
+
+        You break down the door but in turn break your right hand.
+        [[ouch|ouch]]
+    
+<</if>>
+
+:: break hand
+You break down the door but in turn break your right hand.
+
+[[ouch|ouch]]
+
+:: ouch
+You head out and return to the main lobby to see that Doctor Plum has been murdered!
+
+[[oh dear|rip plum]]
+
+:: rip plum
+You see Princess Orchid and Chef Sun state at each other and point in their respective directions.
+
+Princess Orchid: He did it!
+
+Chef Sun: She did it!
+
+
+Detective Shadow: Just my luck...
+
+Who is the killer?
+
+[[Princess Orchid|lose]] or [[Chef Sun|win]]?
+
 
 :: kitchen
 You see an open cabinet with a note and a key in it.
 
 A window breaks open and things are flying out...
 
-[[continue|choice]]
+[[Act fast!|choice]]
 
 :: choice
 Which do you grab?
+<<set $seconds to 15>>
 
 <<include Timer>>
 
 [[Note|choose_note]] or [[key|choose_key]]
 
 :: Timer
-<<set $seconds to 15>>
 <span id="countdown">You have $seconds seconds to make your decision.</span>
 <<silently>>
     <<repeat 1s>>
@@ -200,22 +329,52 @@ Which do you grab?
     <</repeat>>
 <</silently>>
 
+:: Timer Crash
+<span id="countdown">You have $seconds seconds to make your decision.</span>
+<<silently>>
+    <<repeat 1s>>
+        <<set $seconds to $seconds - 1>>
+        <<if $seconds gt 0>>
+            <<replace "#countdown">>You have $seconds seconds to make your decision.<</replace>>
+        <<else>>
+            <<replace "#countdown">><</replace>>
+            <<goto "plane crash">>
+            <<stop>>
+        <</if>>
+    <</repeat>>
+<</silently>>
+
+:: Timer Bathroom
+<span id="countdown">You have $seconds seconds to make your decision.</span>
+<<silently>>
+    <<repeat 1s>>
+        <<set $seconds to $seconds - 1>>
+        <<if $seconds gt 0>>
+            <<replace "#countdown">>You have $seconds seconds to make your decision.<</replace>>
+        <<else>>
+            <<replace "#countdown">><</replace>>
+            <<goto "break hand">>
+            <<stop>>
+        <</if>>
+    <</repeat>>
+<</silently>>
+
 :: Time up
 Both objects flew out the window...
 
-[[Make your choice|decide]]
+[[Make your choice|decide]] or [[keep searching|ouch]]
 
 :: choose_note
 You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
 
-[[Make your decision|decide]]? or keep searching?
+[[Make your decision|decide]]? or [[keep searching|ouch]]?
 
 :: choose_key
 The key allows you to acces a separate door, hidden behind the counter.
 
 Do you open the door?
 
-[[Yes|open_door]] or [[No|decide]]
+[[Yes|open_door]] or [[No|ouch]]
 
 :: open_door
 The door flies open and you get sucked out of the plane and fall to your doom.
@@ -243,7 +402,16 @@ The police arrive at the plane where Chef Sun is arrested and taken away,
 Shadow makes his detective conference in time and is given a badge of honour for his work, 
 solving another mystery.
 
+:: plane crash
+<<audio "decision" stop>>
+<<audio "mys1" play>>
+The plane crashes,
+
+You Lose.
+
 :: lose
 <<audio "decision" stop>>
 <<audio "mys1" play>>
 Incorrect!
+
+You lose and Chef Sun gets away with his crimes.
