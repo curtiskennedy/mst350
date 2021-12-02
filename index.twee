@@ -41,6 +41,13 @@ Soaring Shadow Prototype
 <<set $password to "">>
 <<set $num_password to "">>
 <<set $has_key to 0>>
+<<set $orchid_poisoned to 0>>
+<<set $dodge_up to "">>
+<<set $dodge_down to "">>
+<<set $dodge_left to "">>
+<<set $dodge_right to "">>
+<<set $num_dodges to 0>>
+
 
 :: Start[centered]
 /*<<audio "title" play>> this one not good will find other*/
@@ -97,7 +104,7 @@ Athlete Andreas: Do you talk at all buddy?
 [[say nothing|silence]]
 
 :: silence
-You decide to walk around the airplan to inspect.
+You decide to walk around the airplane to inspect.
 
 The path leads you to the cabin. There, you notice the pilot sitting in the front of the plane.
 
@@ -294,9 +301,210 @@ Chef Sun: She did it!
 
 Detective Shadow: Just my luck...
 
+You put them both in handcuffs to restrain them from moving until the killer is figured out.
+
+10 minutes remain
+
+[[I know who it is|orchid or sun]] or [[Keep searching|keep searching]]
+
+:: orchid or sun
 Who is the killer?
 
-[[Princess Orchid|lose]] or [[Chef Sun|win]]?
+[[Princess Orchid|lose]] or [[Chef Sun|win]]
+
+:: keep searching
+Detective Shadow: Don't move, either of you.
+
+Princess Orchid: Can you at least pass me the bottle of wine Chef Sun brought?
+
+Chef Sun: Hey! That is for me!
+
+Do you give Princess Orchid the wine?
+    
+    [[Yes|give orchid wine]] or [[No|dont give orchid wine]]
+
+
+:: give orchid wine
+<<set $orchid_poisoned to 1>>
+Princess Orchid: Thank you.
+
+You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.
+
+:: dont give orchid wine
+Princess Orchid: Ugh, can't have anything around here
+
+You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.
+
+
+:: back to kitchen
+Detective Shadow: Who could it be? So many people have died already, I need to figure this out.
+
+You notice another bottle of wine, do you drink it?
+
+[[Yes|poisoned]] or [[No|not poisoned]]
+
+:: poisoned
+Your vision starts to get hazy as you collaspe to the ground, Chef Sun's wine was poison, 
+
+you lose
+
+:: not poisoned
+You head back to the main lobby:
+
+<<if $orchid_poisoned is 1>>
+    Princess Orchid is dead, folded over the table, 
+    Chef Sun has gotten out of the handcuffs and now has a firearm.
+
+    Chef Sun: Wow Detective, not so world-class are you now?
+
+    Chef Sun aims the firearm at you, get ready to dodge his bullets.
+
+    Enter the opposite direction of what is stated on the screen to dodge the bullets
+    Example: if the screen says "up" then you need to type "down" and press ENTER.
+
+    [[Be quick!|dodge up]]
+
+    <<else>>
+    Alright I think I know who it is.
+
+    [[Make your decision|orchid or sun]]
+
+<</if>>
+
+:: dodge up[centered]
+<<set $seconds to 7>>
+Up: <<textbox "$dodge_up" "" "check dodge up" autofocus>>
+<<include "timer dodge">>
+
+:: dodge down[centered]
+<<set $seconds to 7>>
+Down: <<textbox "$dodge_down" "" "check dodge down" autofocus>>
+<<include "timer dodge">>
+
+:: dodge left[centered]
+<<set $seconds to 7>>
+Left: <<textbox "$dodge_left" "" "check dodge left" autofocus>>
+<<include "timer dodge">>
+
+:: dodge right[centered]
+<<set $seconds to 7>>
+Right: <<textbox "$dodge_right" "" "check dodge right" autofocus>>
+<<include "timer dodge">>
+
+:: timer dodge
+<span id="countdown">You have $seconds seconds to type the answer.</span>
+<<silently>>
+    <<repeat 1s>>
+        <<set $seconds to $seconds - 1>>
+        <<if $seconds gt 0>>
+            <<replace "#countdown">>You have $seconds seconds to type the answer.<</replace>>
+        <<else>>
+            <<replace "#countdown">><</replace>>
+            <<goto "dodge bullet lose">>
+            <<stop>>
+        <</if>>
+    <</repeat>>
+<</silently>>
+
+
+:: check dodge up
+<<if $dodge_up is "down">>
+    <<if $num_dodges gt 7>>
+        <<goto "dodge bullet win">>
+    <<else>>
+        <<set $num_dodges to $num_dodges + 1>>
+        <<set $next_dodge to random(1, 4)>>
+        <<if $next_dodge is 1>>
+            <<goto "dodge up">>
+        <<elseif $next_dodge is 2>>
+            <<goto "dodge down">>
+        <<elseif $next_dodge is 3>>
+            <<goto "dodge left">>
+        <<else>>
+            <<goto "dodge right">>
+        <</if>>
+    <</if>>
+<<else>>
+<<goto "dodge bullet lose">>
+<</if>>
+
+:: check dodge down
+<<if $dodge_down is "up">>
+    <<if $num_dodges gt 7>>
+        <<goto "dodge bullet win">>
+    <<else>>
+        <<set $num_dodges to $num_dodges + 1>>
+        <<set $next_dodge to random(1, 4)>>
+        <<if $next_dodge is 1>>
+            <<goto "dodge up">>
+        <<elseif $next_dodge is 2>>
+            <<goto "dodge down">>
+        <<elseif $next_dodge is 3>>
+            <<goto "dodge left">>
+        <<else>>
+            <<goto "dodge right">>
+        <</if>>
+    <</if>>
+<<else>>
+<<goto "dodge bullet lose">>
+<</if>>
+
+:: check dodge left
+<<if $dodge_left is "right">>
+    <<if $num_dodges gt 7>>
+        <<goto "dodge bullet win">>
+    <<else>>
+        <<set $num_dodges to $num_dodges + 1>>
+        <<set $next_dodge to random(1, 4)>>
+        <<if $next_dodge is 1>>
+            <<goto "dodge up">>
+        <<elseif $next_dodge is 2>>
+            <<goto "dodge down">>
+        <<elseif $next_dodge is 3>>
+            <<goto "dodge left">>
+        <<else>>
+            <<goto "dodge right">>
+        <</if>>
+    <</if>>
+<<else>>
+<<goto "dodge bullet lose">>
+<</if>>
+
+:: check dodge right
+<<if $dodge_right is "left">>
+    <<if $num_dodges gt 7>>
+        <<goto "dodge bullet win">>
+    <<else>>
+        <<set $num_dodges to $num_dodges + 1>>
+        <<set $next_dodge to random(1, 4)>>
+        <<if $next_dodge is 1>>
+            <<goto "dodge up">>
+        <<elseif $next_dodge is 2>>
+            <<goto "dodge down">>
+        <<elseif $next_dodge is 3>>
+            <<goto "dodge left">>
+        <<else>>
+            <<goto "dodge right">>
+        <</if>>
+    <</if>>
+<<else>>
+<<goto "dodge bullet lose">>
+<</if>>
+
+
+
+
+:: dodge bullet win
+You successfully dodge all of Chef Sun's bullets, grab the handcuffs and arrest him
+
+The police arrive at the plane where Chef Sun is arrested and taken away, 
+Shadow makes his detective conference in time and is given a badge of honour for his work, 
+solving another mystery.
+
+:: dodge bullet lose
+You fail to dodge Chef Sun's bullets,
+
+you lose.
 
 
 :: kitchen
