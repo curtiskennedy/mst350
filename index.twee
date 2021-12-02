@@ -249,12 +249,14 @@ Lights flicker, part of the engine was shut down, decreased time limit.
 Talk to [[Princess Orchid|Orchid]], [[Doctor Plum|Plum]], [[Chef Sun|Sun]] or [[move on|done]]?
 
 :: Orchid
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif" align="right"/>
 Princess Orchid: I was always very close with Athlete Andreas, 
 in fact he was going to invite me to his next competition!
 
 [[continue|talk]]
 
 :: Plum
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif" align="right"/>
 Doctor Plum: I should have been ready to aid any person who needs help, 
 this is my fault!
 
@@ -263,14 +265,17 @@ By the way, the bathroom door tends to lock on itself. If it does just type in t
 [[continue|talk]]
 
 :: Sun
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif" align="right"/>
 Chef Sun: This is a travesty, all I wanted to do was cook for people.
 
 [[continue|talk]]
 
 :: done
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 Check the [[Bathroom|bathroom]] or [[Kitchen|kitchen]]?
 
 :: bathroom
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You close the door which activates a blue light system, there is something written on the glass in lipstick:
 
 "I am the best, nobody else can be"
@@ -280,6 +285,7 @@ Detective Shadow: Humble...
 [[exit bathroom|exit bathroom]]
 
 :: exit bathroom
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/cd.png" align="right"/>
 You try to exit but the door is locked.
 
 Type in the password: <<textbox "$num_password" "" "Evaluate Num Password" autofocus>>
@@ -306,16 +312,19 @@ Type in the password: <<textbox "$num_password" "" "Evaluate Num Password" autof
 <</if>>
 
 :: break hand
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You break down the door but in turn break your right hand.
 
 [[ouch|ouch]]
 
 :: ouch
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You head out and return to the main lobby to see that Doctor Plum has been murdered!
 
 [[oh dear|rip plum]]
 
 :: rip plum
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif"/>
 You see Princess Orchid and Chef Sun state at each other and point in their respective directions.
 
 Princess Orchid: He did it!
@@ -326,17 +335,22 @@ Chef Sun: She did it!
 Detective Shadow: Just my luck...
 
 You put them both in handcuffs to restrain them from moving until the killer is figured out.
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/twelve-oclock_1f55b.png" align="right"/>
+Lights flicker, part of the engine was shut down, decreased time limit.
 
-10 minutes remain
+<div style="text-align: right; padding-left:30px">10 minutes remain</div>
+
 
 [[I know who it is|orchid or sun]] or [[Keep searching|keep searching]]
 
 :: orchid or sun
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif"/>
 Who is the killer?
 
 [[Princess Orchid|lose]] or [[Chef Sun|win]]
 
 :: keep searching
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 Detective Shadow: Don't move, either of you.
 
 Princess Orchid: Can you at least pass me the bottle of wine Chef Sun brought?
@@ -349,18 +363,21 @@ Do you give Princess Orchid the wine?
 
 
 :: give orchid wine
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess.gif" align="right"/>
 <<set $orchid_poisoned to 1>>
 Princess Orchid: Thank you.
 
 You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.
 
 :: dont give orchid wine
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess.gif" align="right"/>
 Princess Orchid: Ugh, can't have anything around here
 
 You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.
 
 
 :: back to kitchen
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 Detective Shadow: Who could it be? So many people have died already, I need to figure this out.
 
 You notice another bottle of wine, do you drink it?
@@ -368,6 +385,7 @@ You notice another bottle of wine, do you drink it?
 [[Yes|poisoned]] or [[No|not poisoned]]
 
 :: poisoned
+
 Your vision starts to get hazy as you collaspe to the ground, Chef Sun's wine was poison, 
 
 you lose
