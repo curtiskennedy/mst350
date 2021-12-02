@@ -116,6 +116,7 @@ Athlete Andreas: Do you talk at all buddy?
 [[say nothing|silence]]
 
 :: silence
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You decide to walk around the airplane to inspect.
 
 The path leads you to the cabin. There, you notice the pilot sitting in the front of the plane.
@@ -123,6 +124,7 @@ The path leads you to the cabin. There, you notice the pilot sitting in the fron
 [[Approach the pilot|approach]]
 
 :: approach
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 Detective Shadow: Hey, I was wondering if you knew how long we have left in the flight?
 
 Pilot: ...
@@ -130,22 +132,27 @@ Pilot: ...
 [["Sir?"|ask]]
 
 :: ask
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You notice the pilot is unconscious and the plane is descending at a rapid pace.
 
 [[Time to act fast!|quick choice]]
 
 :: quick choice
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/cd.png" align="right"/>
 Do you [[help the pilot|help pilot]] or do you [[steer the plane|steer plane]]?
 
 <<set $seconds to 15>>
 <<include Timer Crash>>
 
+
 :: help pilot
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You try to wake him up but notice there is a bullet wound on his head. Someone has been here.
 
 You look back forward and try to [[steer the plane|steer plane]]
 
 :: steer plane
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/cd.png" align="right"/>
 Enter the password to override auto control: <<textbox "$password" "" "Evaluate Password" autofocus>>
 
 press ENTER to submit password
