@@ -70,45 +70,47 @@ You, detective Dwayne Shadow, enter a hallway to [[board|FA1]] a private plane.
 
 <div style="text-align: right; padding-left:30px">5hrs Left</div>  
 
-                                           
-
-
-
 
 :: FA1
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/faidle.gif" align="right"/>
 Flight Attendant: Dwayne Shadow, thank you very much for flying with Soaring Air today, we know that you are on your way to the world famous detective festival, so we shall make sure there is as little turbulence as possible. For your safety, please remember our password "Safety". May I get you something to drink?
 
 [[Sure|drink]] or [[No|no]]
 
 :: no
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/faidle.gif" align="right"/>
 Flight Attendant: Of course!! Enjoy your flight!
 
 [[continue|take off]]
 
 :: drink
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/faidle.gif" align="right"/>
 The flight attendant gives you a martini, seems a bit stronger than usual, did you order a double?
 
 [[sip drink|sip]]
 
 :: sip
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 Wait, there is a key at the bottom of the glass... but why?
 <<set $has_key to 1>>
 
 [[take key|take off]]
 
 :: take off
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/athlete.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif"/>
 You walk into the main room of the plane to see four other passengers seated.
 Doctor Plum, Chef Sun, Princess Orchid, and Athlete Andreas.
 
 [[nod at them|greet]]
 
 :: greet
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif"/>
 Doctor Plum: Well isn't it about time our last guest arrived
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif"/>
 Princess Orchid: He's a tad bit late to the party. Expected from someone who isn't the best like me.
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif"/>
 Chef Sun: I'll have a steak cooked up for you
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/athlete.gif"/>
 Athlete Andreas: Do you talk at all buddy?
 
 [[say nothing|silence]]
