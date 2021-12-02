@@ -125,7 +125,13 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 &lt;&lt;set $hours_left to 5&gt;&gt;
 &lt;&lt;set $password to &quot;&quot;&gt;&gt;
 &lt;&lt;set $num_password to &quot;&quot;&gt;&gt;
-&lt;&lt;set $has_key to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="centered" position="225,100" size="100,100">/*&lt;&lt;audio &quot;title&quot; play&gt;&gt; this one not good will find other*/
+&lt;&lt;set $has_key to 0&gt;&gt;
+&lt;&lt;set $orchid_poisoned to 0&gt;&gt;
+&lt;&lt;set $dodge_up to &quot;&quot;&gt;&gt;
+&lt;&lt;set $dodge_down to &quot;&quot;&gt;&gt;
+&lt;&lt;set $dodge_left to &quot;&quot;&gt;&gt;
+&lt;&lt;set $dodge_right to &quot;&quot;&gt;&gt;
+&lt;&lt;set $num_dodges to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="centered" position="225,100" size="100,100">/*&lt;&lt;audio &quot;title&quot; play&gt;&gt; this one not good will find other*/
 &lt;&lt;audio &quot;exp1&quot; play&gt;&gt;
 &lt;&lt;audio &quot;exp1&quot; loop&gt;&gt;
 Soaring Shadow Game Prototype
@@ -152,7 +158,7 @@ Chef Sun: I&#39;ll have a steak cooked up for you
 
 Athlete Andreas: Do you talk at all buddy?
 
-[[say nothing|silence]]</tw-passagedata><tw-passagedata pid="10" name="silence" tags="" position="1225,100" size="100,100">You decide to walk around the airplan to inspect.
+[[say nothing|silence]]</tw-passagedata><tw-passagedata pid="10" name="silence" tags="" position="1225,100" size="100,100">You decide to walk around the airplane to inspect.
 
 The path leads you to the cabin. There, you notice the pilot sitting in the front of the plane.
 
@@ -273,18 +279,159 @@ Chef Sun: She did it!
 
 Detective Shadow: Just my luck...
 
-Who is the killer?
+You put them both in handcuffs to restrain them from moving until the killer is figured out.
 
-[[Princess Orchid|lose]] or [[Chef Sun|win]]?</tw-passagedata><tw-passagedata pid="35" name="kitchen" tags="" position="600,475" size="100,100">You see an open cabinet with a note and a key in it.
+10 minutes remain
+
+[[I know who it is|orchid or sun]] or [[Keep searching|keep searching]]</tw-passagedata><tw-passagedata pid="35" name="orchid or sun" tags="" position="600,475" size="100,100">Who is the killer?
+
+[[Princess Orchid|lose]] or [[Chef Sun|win]]</tw-passagedata><tw-passagedata pid="36" name="keep searching" tags="" position="725,475" size="100,100">Detective Shadow: Don&#39;t move, either of you.
+
+Princess Orchid: Can you at least pass me the bottle of wine Chef Sun brought?
+
+Chef Sun: Hey! That is for me!
+
+Do you give Princess Orchid the wine?
+    
+    [[Yes|give orchid wine]] or [[No|dont give orchid wine]]</tw-passagedata><tw-passagedata pid="37" name="give orchid wine" tags="" position="850,475" size="100,100">&lt;&lt;set $orchid_poisoned to 1&gt;&gt;
+Princess Orchid: Thank you.
+
+You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.</tw-passagedata><tw-passagedata pid="38" name="dont give orchid wine" tags="" position="975,475" size="100,100">Princess Orchid: Ugh, can&#39;t have anything around here
+
+You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.</tw-passagedata><tw-passagedata pid="39" name="back to kitchen" tags="" position="1100,475" size="100,100">Detective Shadow: Who could it be? So many people have died already, I need to figure this out.
+
+You notice another bottle of wine, do you drink it?
+
+[[Yes|poisoned]] or [[No|not poisoned]]</tw-passagedata><tw-passagedata pid="40" name="poisoned" tags="" position="1225,475" size="100,100">Your vision starts to get hazy as you collaspe to the ground, Chef Sun&#39;s wine was poison, 
+
+you lose</tw-passagedata><tw-passagedata pid="41" name="not poisoned" tags="" position="100,600" size="100,100">You head back to the main lobby:
+
+&lt;&lt;if $orchid_poisoned is 1&gt;&gt;
+    Princess Orchid is dead, folded over the table, 
+    Chef Sun has gotten out of the handcuffs and now has a firearm.
+
+    Chef Sun: Wow Detective, not so world-class are you now?
+
+    Chef Sun aims the firearm at you, get ready to dodge his bullets.
+
+    Enter the opposite direction of what is stated on the screen to dodge the bullets
+    Example: if the screen says &quot;up&quot; then you need to type &quot;down&quot; and press ENTER.
+
+    [[Be quick!|dodge up]]
+
+    &lt;&lt;else&gt;&gt;
+    Alright I think I know who it is.
+
+    [[Make your decision|orchid or sun]]
+
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="dodge up" tags="centered" position="225,600" size="100,100">&lt;&lt;set $seconds to 7&gt;&gt;
+Up: &lt;&lt;textbox &quot;$dodge_up&quot; &quot;&quot; &quot;check dodge up&quot; autofocus&gt;&gt;
+&lt;&lt;include &quot;timer dodge&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="dodge down" tags="centered" position="350,600" size="100,100">&lt;&lt;set $seconds to 7&gt;&gt;
+Down: &lt;&lt;textbox &quot;$dodge_down&quot; &quot;&quot; &quot;check dodge down&quot; autofocus&gt;&gt;
+&lt;&lt;include &quot;timer dodge&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="dodge left" tags="centered" position="475,600" size="100,100">&lt;&lt;set $seconds to 7&gt;&gt;
+Left: &lt;&lt;textbox &quot;$dodge_left&quot; &quot;&quot; &quot;check dodge left&quot; autofocus&gt;&gt;
+&lt;&lt;include &quot;timer dodge&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="dodge right" tags="centered" position="600,600" size="100,100">&lt;&lt;set $seconds to 7&gt;&gt;
+Right: &lt;&lt;textbox &quot;$dodge_right&quot; &quot;&quot; &quot;check dodge right&quot; autofocus&gt;&gt;
+&lt;&lt;include &quot;timer dodge&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="timer dodge" tags="" position="725,600" size="100,100">&lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to type the answer.&lt;/span&gt;
+&lt;&lt;silently&gt;&gt;
+    &lt;&lt;repeat 1s&gt;&gt;
+        &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
+        &lt;&lt;if $seconds gt 0&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;You have $seconds seconds to type the answer.&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;goto &quot;dodge bullet lose&quot;&gt;&gt;
+            &lt;&lt;stop&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="check dodge up" tags="" position="850,600" size="100,100">&lt;&lt;if $dodge_up is &quot;down&quot;&gt;&gt;
+    &lt;&lt;if $num_dodges gt 7&gt;&gt;
+        &lt;&lt;goto &quot;dodge bullet win&quot;&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $num_dodges to $num_dodges + 1&gt;&gt;
+        &lt;&lt;set $next_dodge to random(1, 4)&gt;&gt;
+        &lt;&lt;if $next_dodge is 1&gt;&gt;
+            &lt;&lt;goto &quot;dodge up&quot;&gt;&gt;
+        &lt;&lt;elseif $next_dodge is 2&gt;&gt;
+            &lt;&lt;goto &quot;dodge down&quot;&gt;&gt;
+        &lt;&lt;elseif $next_dodge is 3&gt;&gt;
+            &lt;&lt;goto &quot;dodge left&quot;&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;goto &quot;dodge right&quot;&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;goto &quot;dodge bullet lose&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="check dodge down" tags="" position="975,600" size="100,100">&lt;&lt;if $dodge_down is &quot;up&quot;&gt;&gt;
+    &lt;&lt;if $num_dodges gt 7&gt;&gt;
+        &lt;&lt;goto &quot;dodge bullet win&quot;&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $num_dodges to $num_dodges + 1&gt;&gt;
+        &lt;&lt;set $next_dodge to random(1, 4)&gt;&gt;
+        &lt;&lt;if $next_dodge is 1&gt;&gt;
+            &lt;&lt;goto &quot;dodge up&quot;&gt;&gt;
+        &lt;&lt;elseif $next_dodge is 2&gt;&gt;
+            &lt;&lt;goto &quot;dodge down&quot;&gt;&gt;
+        &lt;&lt;elseif $next_dodge is 3&gt;&gt;
+            &lt;&lt;goto &quot;dodge left&quot;&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;goto &quot;dodge right&quot;&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;goto &quot;dodge bullet lose&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="check dodge left" tags="" position="1100,600" size="100,100">&lt;&lt;if $dodge_left is &quot;right&quot;&gt;&gt;
+    &lt;&lt;if $num_dodges gt 7&gt;&gt;
+        &lt;&lt;goto &quot;dodge bullet win&quot;&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $num_dodges to $num_dodges + 1&gt;&gt;
+        &lt;&lt;set $next_dodge to random(1, 4)&gt;&gt;
+        &lt;&lt;if $next_dodge is 1&gt;&gt;
+            &lt;&lt;goto &quot;dodge up&quot;&gt;&gt;
+        &lt;&lt;elseif $next_dodge is 2&gt;&gt;
+            &lt;&lt;goto &quot;dodge down&quot;&gt;&gt;
+        &lt;&lt;elseif $next_dodge is 3&gt;&gt;
+            &lt;&lt;goto &quot;dodge left&quot;&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;goto &quot;dodge right&quot;&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;goto &quot;dodge bullet lose&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="check dodge right" tags="" position="1225,600" size="100,100">&lt;&lt;if $dodge_right is &quot;left&quot;&gt;&gt;
+    &lt;&lt;if $num_dodges gt 7&gt;&gt;
+        &lt;&lt;goto &quot;dodge bullet win&quot;&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $num_dodges to $num_dodges + 1&gt;&gt;
+        &lt;&lt;set $next_dodge to random(1, 4)&gt;&gt;
+        &lt;&lt;if $next_dodge is 1&gt;&gt;
+            &lt;&lt;goto &quot;dodge up&quot;&gt;&gt;
+        &lt;&lt;elseif $next_dodge is 2&gt;&gt;
+            &lt;&lt;goto &quot;dodge down&quot;&gt;&gt;
+        &lt;&lt;elseif $next_dodge is 3&gt;&gt;
+            &lt;&lt;goto &quot;dodge left&quot;&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;goto &quot;dodge right&quot;&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;goto &quot;dodge bullet lose&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="dodge bullet win" tags="" position="100,725" size="100,100">You successfully dodge all of Chef Sun&#39;s bullets, grab the handcuffs and arrest him
+
+The police arrive at the plane where Chef Sun is arrested and taken away, 
+Shadow makes his detective conference in time and is given a badge of honour for his work, 
+solving another mystery.</tw-passagedata><tw-passagedata pid="52" name="dodge bullet lose" tags="" position="225,725" size="100,100">You fail to dodge Chef Sun&#39;s bullets,
+
+you lose.</tw-passagedata><tw-passagedata pid="53" name="kitchen" tags="" position="350,725" size="100,100">You see an open cabinet with a note and a key in it.
 
 A window breaks open and things are flying out...
 
-[[Act fast!|choice]]</tw-passagedata><tw-passagedata pid="36" name="choice" tags="" position="725,475" size="100,100">Which do you grab?
+[[Act fast!|choice]]</tw-passagedata><tw-passagedata pid="54" name="choice" tags="" position="475,725" size="100,100">Which do you grab?
 &lt;&lt;set $seconds to 15&gt;&gt;
 
 &lt;&lt;include Timer&gt;&gt;
 
-[[Note|choose_note]] or [[key|choose_key]]</tw-passagedata><tw-passagedata pid="37" name="Timer" tags="" position="850,475" size="100,100">&lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
+[[Note|choose_note]] or [[key|choose_key]]</tw-passagedata><tw-passagedata pid="55" name="Timer" tags="" position="600,725" size="100,100">&lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat 1s&gt;&gt;
         &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
@@ -296,7 +443,7 @@ A window breaks open and things are flying out...
             &lt;&lt;stop&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="Timer Crash" tags="" position="975,475" size="100,100">&lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="Timer Crash" tags="" position="725,725" size="100,100">&lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat 1s&gt;&gt;
         &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
@@ -308,7 +455,7 @@ A window breaks open and things are flying out...
             &lt;&lt;stop&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="Timer Bathroom" tags="" position="1100,475" size="100,100">&lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="Timer Bathroom" tags="" position="850,725" size="100,100">&lt;span id=&quot;countdown&quot;&gt;You have $seconds seconds to make your decision.&lt;/span&gt;
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat 1s&gt;&gt;
         &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
@@ -320,17 +467,17 @@ A window breaks open and things are flying out...
             &lt;&lt;stop&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Time up" tags="" position="1225,475" size="100,100">Both objects flew out the window...
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="Time up" tags="" position="975,725" size="100,100">Both objects flew out the window...
 
-[[Make your choice|decide]] or [[keep searching|ouch]]</tw-passagedata><tw-passagedata pid="41" name="choose_note" tags="" position="100,600" size="100,100">You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
+[[Make your choice|decide]] or [[keep searching|ouch]]</tw-passagedata><tw-passagedata pid="59" name="choose_note" tags="" position="1100,725" size="100,100">You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
 
-[[Make your decision|decide]]? or [[keep searching|ouch]]?</tw-passagedata><tw-passagedata pid="42" name="choose_key" tags="" position="225,600" size="100,100">The key allows you to acces a separate door, hidden behind the counter.
+[[Make your decision|decide]]? or [[keep searching|ouch]]?</tw-passagedata><tw-passagedata pid="60" name="choose_key" tags="" position="1225,725" size="100,100">The key allows you to acces a separate door, hidden behind the counter.
 
 Do you open the door?
 
-[[Yes|open_door]] or [[No|ouch]]</tw-passagedata><tw-passagedata pid="43" name="open_door" tags="" position="350,600" size="100,100">The door flies open and you get sucked out of the plane and fall to your doom.
+[[Yes|open_door]] or [[No|ouch]]</tw-passagedata><tw-passagedata pid="61" name="open_door" tags="" position="100,850" size="100,100">The door flies open and you get sucked out of the plane and fall to your doom.
 
-The end.</tw-passagedata><tw-passagedata pid="44" name="decide" tags="" position="475,600" size="100,100">&lt;&lt;audio &quot;exp3&quot; stop&gt;&gt;
+The end.</tw-passagedata><tw-passagedata pid="62" name="decide" tags="" position="225,850" size="100,100">&lt;&lt;audio &quot;exp3&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;decision&quot; play&gt;&gt;
 &lt;&lt;audio &quot;decision&quot; loop&gt;&gt;
 I believe the killer is...
@@ -339,17 +486,17 @@ I believe the killer is...
 
 [[Princess Orchid|lose]]
 
-[[Doctor Plum|lose]]</tw-passagedata><tw-passagedata pid="45" name="win" tags="" position="600,600" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
+[[Doctor Plum|lose]]</tw-passagedata><tw-passagedata pid="63" name="win" tags="" position="350,850" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;happyhour&quot; play&gt;&gt;
 Correct!
 
 The police arrive at the plane where Chef Sun is arrested and taken away, 
 Shadow makes his detective conference in time and is given a badge of honour for his work, 
-solving another mystery.</tw-passagedata><tw-passagedata pid="46" name="plane crash" tags="" position="725,600" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
+solving another mystery.</tw-passagedata><tw-passagedata pid="64" name="plane crash" tags="" position="475,850" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;mys1&quot; play&gt;&gt;
 The plane crashes,
 
-You Lose.</tw-passagedata><tw-passagedata pid="47" name="lose" tags="" position="850,600" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
+You Lose.</tw-passagedata><tw-passagedata pid="65" name="lose" tags="" position="600,850" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;mys1&quot; play&gt;&gt;
 Incorrect!
 
