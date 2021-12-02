@@ -178,35 +178,38 @@ press ENTER to submit password
 
 
 :: crash
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 There is a loud crash, the lights flicker and go out, 
 screams are heard throughout the plane
 
 [[compose yourself|lights_on]]
 
 :: lights_on
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 The lights turn back on. You run back to the main room of the plane.
 
 You take a [[look around|look]] to see what has happened, luggage has fallen down everywhere.
 
 :: look
-<<audio "exp1" stop>>
-<<audio "exp2" play>>
-<<audio "exp2" loop>>
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/athlete_die.png"/>
 Athlete Andreas has been killed!
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif"/>
 Princess Orchid: Who could have done this?
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif"/>
 Chef Sun: You sound suspicious yourself
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif"/>
 Doctor Plum: Even I cannot revive him...
 
 
 [[I know who it is!|decide]] or [[let me do some investigating|investigate]]
 
 :: investigate
-4 Hours Remain
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/time/two-oclock_1f551.png" align="right"/>
 You search the plane, and find a cabinet with a lock.
+
+<div style="text-align: right; padding-left:30px">4hrs Left</div>
+
+
 <<if $has_key is 1>>
 Use the key you found earlier?
 [[Yes|use_key]] or [[No|interesting]]
@@ -218,6 +221,7 @@ Use the key you found earlier?
 
 
 :: use_key
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You find a note:
 
 "This detective joining our flight has no business being here, 
@@ -226,6 +230,7 @@ I can't wait to frame him for the mysterious disappearance of one of our passeng
 [[Interesting...|interesting]]
 
 :: interesting
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You find a generator with 3 batteries as the power source, do you touch the batteries?
 
 [[Yes|touch_batteries]] or [[No|talk]]
