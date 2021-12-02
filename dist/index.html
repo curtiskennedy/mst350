@@ -114,13 +114,13 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 }
 .passage a:active {
 	color: green;
-} */</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;title&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/theme.WAV&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;happyhour&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/a%20happly%20hour.WAV&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;exp1&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring.WAV&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;exp2&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring2.WAV&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;exp3&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring3.WAV&quot;&gt;&gt;
+} */</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;title&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/theme.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;happyhour&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/countdown/ahappyhour.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;rushing&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/countdown/rushing.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;cd&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/countdown/cd.wav&quot;&gt;&gt;
+/* &lt;&lt;cacheaudio &quot;exp3&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring3.WAV&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;mys1&quot; &quot;wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/mystery1.WAV&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;decision&quot; &quot;mp3|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/decision.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;decision&quot; &quot;mp3|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/decision.mp3&quot;&gt;&gt; */
 &lt;&lt;set $seconds to 30&gt;&gt;
 &lt;&lt;set $hours_left to 5&gt;&gt;
 &lt;&lt;set $password to &quot;&quot;&gt;&gt;
@@ -131,10 +131,8 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 &lt;&lt;set $dodge_down to &quot;&quot;&gt;&gt;
 &lt;&lt;set $dodge_left to &quot;&quot;&gt;&gt;
 &lt;&lt;set $dodge_right to &quot;&quot;&gt;&gt;
-&lt;&lt;set $num_dodges to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="centered" position="225,100" size="100,100">/*&lt;&lt;audio &quot;title&quot; play&gt;&gt; this one not good will find other*/
-&lt;&lt;audio &quot;happyhour&quot; play&gt;&gt;
-&lt;&lt;audio &quot;happyhour&quot; loop&gt;&gt;
-
+&lt;&lt;set $num_dodges to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="centered" position="225,100" size="100,100">&lt;&lt;audio &quot;title&quot; play&gt;&gt;
+&lt;&lt;audio &quot;title&quot; loop&gt;&gt;
 
 Soaring Shadow
 
@@ -533,17 +531,17 @@ The end.</tw-passagedata><tw-passagedata pid="62" name="decide" tags="" position
 &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif&quot; align=&quot;right&quot;/&gt;
 [[Princess Orchid|lose]]
 &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif&quot; align=&quot;right&quot;/&gt;
-[[Doctor Plum|lose]]</tw-passagedata><tw-passagedata pid="63" name="win" tags="" position="350,850" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
+[[Doctor Plum|lose]]</tw-passagedata><tw-passagedata pid="63" name="win" tags="" position="350,850" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;happyhour&quot; play&gt;&gt;
 Correct!
 
 The police arrive at the plane where Chef Sun is arrested and taken away, 
 Shadow makes his detective conference in time and is given a badge of honour for his work, 
-solving another mystery.</tw-passagedata><tw-passagedata pid="64" name="plane crash" tags="" position="475,850" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
+solving another mystery.</tw-passagedata><tw-passagedata pid="64" name="plane crash" tags="" position="475,850" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;mys1&quot; play&gt;&gt;
 The plane crashes,
 
-You Lose.</tw-passagedata><tw-passagedata pid="65" name="lose" tags="" position="600,850" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
+You Lose.</tw-passagedata><tw-passagedata pid="65" name="lose" tags="" position="600,850" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;mys1&quot; play&gt;&gt;
 Incorrect!
 

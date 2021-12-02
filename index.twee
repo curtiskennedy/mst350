@@ -28,13 +28,13 @@
 Soaring Shadow
 :: StoryInit
 
-<<cacheaudio "title" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/theme.WAV">>
-<<cacheaudio "happyhour" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/a%20happly%20hour.WAV">>
-<<cacheaudio "rushing" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/countdown/rushing.WAV">>
-<<cacheaudio "exp2" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring2.WAV">>
-<<cacheaudio "exp3" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring3.WAV">>
+<<cacheaudio "title" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/theme.wav">>
+<<cacheaudio "happyhour" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/countdown/ahappyhour.wav">>
+<<cacheaudio "rushing" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/countdown/rushing.wav">>
+<<cacheaudio "cd" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/countdown/cd.wav">>
+/* <<cacheaudio "exp3" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring3.WAV">>
 <<cacheaudio "mys1" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/mystery1.WAV">>
-<<cacheaudio "decision" "mp3|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/decision.mp3">>
+<<cacheaudio "decision" "mp3|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/decision.mp3">> */
 <<set $seconds to 30>>
 <<set $hours_left to 5>>
 <<set $password to "">>
@@ -49,10 +49,9 @@ Soaring Shadow
 
 
 :: Start[centered]
-/*<<audio "title" play>> this one not good will find other*/
-<<audio "happyhour" play>>
-<<audio "happyhour" loop>>
 
+<<audio "title" play>>
+<<audio "title" loop>>
 
 Soaring Shadow
 
@@ -63,8 +62,6 @@ Soaring Shadow
 
 
 :: begin
-
-
 <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/time/eight-oclock_1f557.png" align="right"/>
 You, detective Dwayne Shadow, enter a hallway to [[board|FA1]] a private plane. 
 
@@ -651,7 +648,7 @@ I believe the killer is...
 [[Doctor Plum|lose]]
 
 :: win
-<<audio "decision" stop>>
+<<audio ":all" stop>>
 <<audio "happyhour" play>>
 Correct!
 
@@ -660,14 +657,14 @@ Shadow makes his detective conference in time and is given a badge of honour for
 solving another mystery.
 
 :: plane crash
-<<audio "decision" stop>>
+<<audio ":all" stop>>
 <<audio "mys1" play>>
 The plane crashes,
 
 You Lose.
 
 :: lose
-<<audio "decision" stop>>
+<<audio ":all" stop>>
 <<audio "mys1" play>>
 Incorrect!
 
