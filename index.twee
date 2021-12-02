@@ -29,7 +29,7 @@ Soaring Shadow
 :: StoryInit
 
 <<cacheaudio "title" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/theme.WAV">>
-<<cacheaudio "happyhour" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/a happy hour.WAV">>
+<<cacheaudio "happyhour" "MP3|https://github.com/curtiskennedy/mst350/blob/3948e382a388c5db8c84a2ae8dc67fd8f90832f7/media/a%20happly%20hour.MP3">>
 <<cacheaudio "exp1" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring.WAV">>
 <<cacheaudio "exp2" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring2.WAV">>
 <<cacheaudio "exp3" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring3.WAV">>
@@ -50,8 +50,8 @@ Soaring Shadow
 
 :: Start[centered]
 /*<<audio "title" play>> this one not good will find other*/
-<<audio "title" play>>
-<<audio "title" loop>>
+<<audio "happyhour" play>>
+<<audio "happyhour" loop>>
 
 
 Soaring Shadow
