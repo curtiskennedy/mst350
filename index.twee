@@ -25,8 +25,7 @@
 } */
 
 :: StoryTitle
-Soaring Shadow Prototype
-
+Soaring Shadow
 :: StoryInit
 
 <<cacheaudio "title" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/a happy hour.WAV">>
@@ -53,7 +52,11 @@ Soaring Shadow Prototype
 /*<<audio "title" play>> this one not good will find other*/
 <<audio "exp1" play>>
 <<audio "exp1" loop>>
-Soaring Shadow Game Prototype
+
+
+Soaring Shadow
+
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/athlete.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif"/>
 
 [[Click here to begin|begin]]
 
@@ -61,9 +64,16 @@ Soaring Shadow Game Prototype
 
 :: begin
 
-You, detective Dwayne Shadow, enter a hallway to [[board|FA1]] a private plane.
 
-5 Hours Remain
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/time/eight-oclock_1f557.png" align="right"/>
+You, detective Dwayne Shadow, enter a hallway to [[board|FA1]] a private plane. 
+
+<div style="text-align: right; padding-left:30px">5hrs Left</div>  
+
+                                           
+
+
+
 
 :: FA1
 Flight Attendant: Dwayne Shadow, thank you very much for flying with Soaring Air today, we know that you are on your way to the world famous detective festival, so we shall make sure there is as little turbulence as possible. For your safety, please remember our password "Safety". May I get you something to drink?
