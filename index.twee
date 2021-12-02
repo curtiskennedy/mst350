@@ -28,7 +28,7 @@
 Soaring Shadow
 :: StoryInit
 
-<<cacheaudio "title" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/a happy hour.WAV">>
+<<cacheaudio "title" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/theme.WAV">>
 <<cacheaudio "happyhour" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/a happy hour.WAV">>
 <<cacheaudio "exp1" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring.WAV">>
 <<cacheaudio "exp2" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring2.WAV">>
@@ -50,8 +50,8 @@ Soaring Shadow
 
 :: Start[centered]
 /*<<audio "title" play>> this one not good will find other*/
-<<audio "exp1" play>>
-<<audio "exp1" loop>>
+<<audio "title" play>>
+<<audio "title" loop>>
 
 
 Soaring Shadow
@@ -318,7 +318,7 @@ You break down the door but in turn break your right hand.
 [[ouch|ouch]]
 
 :: ouch
-<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/doctor_die.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You head out and return to the main lobby to see that Doctor Plum has been murdered!
 
 [[oh dear|rip plum]]
@@ -344,13 +344,13 @@ Lights flicker, part of the engine was shut down, decreased time limit.
 [[I know who it is|orchid or sun]] or [[Keep searching|keep searching]]
 
 :: orchid or sun
-<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif"/>
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif"/>
 Who is the killer?
 
 [[Princess Orchid|lose]] or [[Chef Sun|win]]
 
 :: keep searching
-<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 Detective Shadow: Don't move, either of you.
 
 Princess Orchid: Can you at least pass me the bottle of wine Chef Sun brought?
@@ -391,11 +391,10 @@ Your vision starts to get hazy as you collaspe to the ground, Chef Sun's wine wa
 you lose
 
 :: not poisoned
-<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You head back to the main lobby:
 
 <<if $orchid_poisoned is 1>>
-    <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_die.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
+    <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_die.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
     Princess Orchid is dead, folded over the table, 
     Chef Sun has gotten out of the handcuffs and now has a firearm.
 
@@ -644,11 +643,11 @@ The end.
 
 :: decide
 I believe the killer is...
-<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.gif" align="right"/>
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif" align="right"/>
 [[Chef Sun|win]]
-<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess.gif" align="right"/>
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif" align="right"/>
 [[Princess Orchid|lose]]
-<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/doctor.gif" align="right"/>
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif" align="right"/>
 [[Doctor Plum|lose]]
 
 :: win
