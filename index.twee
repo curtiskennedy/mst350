@@ -236,16 +236,16 @@ You find a generator with 3 batteries as the power source, do you touch the batt
 [[Yes|touch_batteries]] or [[No|talk]]
 
 :: touch_batteries
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/1%26hhrs.png" align="right"/>
 Lights flicker, part of the engine was shut down, decreased time limit.
 
-1.5 Hours Remain
+<div style="text-align: right; padding-left:30px">1.5 Hours Remain</div>
+
 
 [[continue|talk]]
 
 :: talk
-<<audio "exp2" stop>>
-<<audio "exp3" play>>
-<<audio "exp3" loop>>
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/athlete_die.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif"/>
 Talk to [[Princess Orchid|Orchid]], [[Doctor Plum|Plum]], [[Chef Sun|Sun]] or [[move on|done]]?
 
 :: Orchid
