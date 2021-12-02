@@ -324,7 +324,7 @@ You head out and return to the main lobby to see that Doctor Plum has been murde
 [[oh dear|rip plum]]
 
 :: rip plum
-<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif"/>
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif"/>
 You see Princess Orchid and Chef Sun state at each other and point in their respective directions.
 
 Princess Orchid: He did it!
@@ -409,6 +409,7 @@ You head back to the main lobby:
     [[Be quick!|dodge up]]
 
     <<else>>
+    <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
     Alright I think I know who it is.
 
     [[Make your decision|orchid or sun]]
@@ -539,6 +540,7 @@ Right: <<textbox "$dodge_right" "" "check dodge right" autofocus>>
 
 
 :: dodge bullet win
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You successfully dodge all of Chef Sun's bullets, grab the handcuffs and arrest him
 
 The police arrive at the plane where Chef Sun is arrested and taken away, 
@@ -546,12 +548,14 @@ Shadow makes his detective conference in time and is given a badge of honour for
 solving another mystery.
 
 :: dodge bullet lose
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective_die.png"/>
 You fail to dodge Chef Sun's bullets,
 
 you lose.
 
 
 :: kitchen
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You see an open cabinet with a note and a key in it.
 
 A window breaks open and things are flying out...
@@ -559,6 +563,7 @@ A window breaks open and things are flying out...
 [[Act fast!|choice]]
 
 :: choice
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/cd.png" align="right"/>
 Which do you grab?
 <<set $seconds to 15>>
 
@@ -612,16 +617,19 @@ Which do you grab?
 <</silently>>
 
 :: Time up
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 Both objects flew out the window...
 
 [[Make your choice|decide]] or [[keep searching|ouch]]
 
 :: choose_note
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
 
 [[Make your decision|decide]]? or [[keep searching|ouch]]?
 
 :: choose_key
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 The key allows you to acces a separate door, hidden behind the counter.
 
 Do you open the door?
@@ -629,20 +637,18 @@ Do you open the door?
 [[Yes|open_door]] or [[No|ouch]]
 
 :: open_door
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective_die.png" align="right"/>
 The door flies open and you get sucked out of the plane and fall to your doom.
 
 The end.
 
 :: decide
-<<audio "exp3" stop>>
-<<audio "decision" play>>
-<<audio "decision" loop>>
 I believe the killer is...
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.gif" align="right"/>
 [[Chef Sun|win]]
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess.gif" align="right"/>
 [[Princess Orchid|lose]]
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/doctor.gif" align="right"/>
 [[Doctor Plum|lose]]
 
 :: win

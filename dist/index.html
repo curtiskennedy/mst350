@@ -186,9 +186,11 @@ You notice the pilot is unconscious and the plane is descending at a rapid pace.
 Do you [[help the pilot|help pilot]] or do you [[steer the plane|steer plane]]?
 
 &lt;&lt;set $seconds to 15&gt;&gt;
-&lt;&lt;include Timer Crash&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="help pilot" tags="" position="475,225" size="100,100">You try to wake him up but notice there is a bullet wound on his head. Someone has been here.
+&lt;&lt;include Timer Crash&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="help pilot" tags="" position="475,225" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You try to wake him up but notice there is a bullet wound on his head. Someone has been here.
 
-You look back forward and try to [[steer the plane|steer plane]]</tw-passagedata><tw-passagedata pid="15" name="steer plane" tags="" position="600,225" size="100,100">Enter the password to override auto control: &lt;&lt;textbox &quot;$password&quot; &quot;&quot; &quot;Evaluate Password&quot; autofocus&gt;&gt;
+You look back forward and try to [[steer the plane|steer plane]]</tw-passagedata><tw-passagedata pid="15" name="steer plane" tags="" position="600,225" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/cd.png&quot; align=&quot;right&quot;/&gt;
+Enter the password to override auto control: &lt;&lt;textbox &quot;$password&quot; &quot;&quot; &quot;Evaluate Password&quot; autofocus&gt;&gt;
 
 press ENTER to submit password
 
@@ -206,63 +208,74 @@ press ENTER to submit password
 
         You Lose.
     
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="crash" tags="" position="850,225" size="100,100">There is a loud crash, the lights flicker and go out, 
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="crash" tags="" position="850,225" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+There is a loud crash, the lights flicker and go out, 
 screams are heard throughout the plane
 
-[[compose yourself|lights_on]]</tw-passagedata><tw-passagedata pid="18" name="lights_on" tags="" position="975,225" size="100,100">The lights turn back on. You run back to the main room of the plane.
+[[compose yourself|lights_on]]</tw-passagedata><tw-passagedata pid="18" name="lights_on" tags="" position="975,225" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+The lights turn back on. You run back to the main room of the plane.
 
-You take a [[look around|look]] to see what has happened, luggage has fallen down everywhere.</tw-passagedata><tw-passagedata pid="19" name="look" tags="" position="1100,225" size="100,100">&lt;&lt;audio &quot;exp1&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;exp2&quot; play&gt;&gt;
-&lt;&lt;audio &quot;exp2&quot; loop&gt;&gt;
+You take a [[look around|look]] to see what has happened, luggage has fallen down everywhere.</tw-passagedata><tw-passagedata pid="19" name="look" tags="" position="1100,225" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/athlete_die.png&quot;/&gt;
 Athlete Andreas has been killed!
-
+&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif&quot;/&gt;
 Princess Orchid: Who could have done this?
-
+&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif&quot;/&gt;
 Chef Sun: You sound suspicious yourself
-
+&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif&quot;/&gt;
 Doctor Plum: Even I cannot revive him...
 
 
-[[I know who it is!|decide]] or [[let me do some investigating|investigate]]</tw-passagedata><tw-passagedata pid="20" name="investigate" tags="" position="1225,225" size="100,100">4 Hours Remain
-
+[[I know who it is!|decide]] or [[let me do some investigating|investigate]]</tw-passagedata><tw-passagedata pid="20" name="investigate" tags="" position="1225,225" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/time/two-oclock_1f551.png&quot; align=&quot;right&quot;/&gt;
 You search the plane, and find a cabinet with a lock.
+
+&lt;div style=&quot;text-align: right; padding-left:30px&quot;&gt;4hrs Left&lt;/div&gt;
+
+
 &lt;&lt;if $has_key is 1&gt;&gt;
 Use the key you found earlier?
 [[Yes|use_key]] or [[No|interesting]]
 
 &lt;&lt;else&gt;&gt;
     [[I don&#39;t have a key|interesting]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="use_key" tags="" position="100,350" size="100,100">You find a note:
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="use_key" tags="" position="100,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You find a note:
 
 &quot;This detective joining our flight has no business being here, 
 I can&#39;t wait to frame him for the mysterious disappearance of one of our passengers&quot;
 
-[[Interesting...|interesting]]</tw-passagedata><tw-passagedata pid="22" name="interesting" tags="" position="225,350" size="100,100">You find a generator with 3 batteries as the power source, do you touch the batteries?
+[[Interesting...|interesting]]</tw-passagedata><tw-passagedata pid="22" name="interesting" tags="" position="225,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You find a generator with 3 batteries as the power source, do you touch the batteries?
 
-[[Yes|touch_batteries]] or [[No|talk]]</tw-passagedata><tw-passagedata pid="23" name="touch_batteries" tags="" position="350,350" size="100,100">Lights flicker, part of the engine was shut down, decreased time limit.
+[[Yes|touch_batteries]] or [[No|talk]]</tw-passagedata><tw-passagedata pid="23" name="touch_batteries" tags="" position="350,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/1%26hhrs.png&quot; align=&quot;right&quot;/&gt;
+Lights flicker, part of the engine was shut down, decreased time limit.
 
-1.5 Hours Remain
+&lt;div style=&quot;text-align: right; padding-left:30px&quot;&gt;1.5 Hours Remain&lt;/div&gt;
 
-[[continue|talk]]</tw-passagedata><tw-passagedata pid="24" name="talk" tags="" position="475,350" size="100,100">&lt;&lt;audio &quot;exp2&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;exp3&quot; play&gt;&gt;
-&lt;&lt;audio &quot;exp3&quot; loop&gt;&gt;
-Talk to [[Princess Orchid|Orchid]], [[Doctor Plum|Plum]], [[Chef Sun|Sun]] or [[move on|done]]?</tw-passagedata><tw-passagedata pid="25" name="Orchid" tags="" position="600,350" size="100,100">Princess Orchid: I was always very close with Athlete Andreas, 
+
+[[continue|talk]]</tw-passagedata><tw-passagedata pid="24" name="talk" tags="" position="475,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/athlete_die.png&quot;/&gt; &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif&quot;/&gt; &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif&quot;/&gt; &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif&quot;/&gt;
+Talk to [[Princess Orchid|Orchid]], [[Doctor Plum|Plum]], [[Chef Sun|Sun]] or [[move on|done]]?</tw-passagedata><tw-passagedata pid="25" name="Orchid" tags="" position="600,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/princess.gif&quot; align=&quot;right&quot;/&gt;
+Princess Orchid: I was always very close with Athlete Andreas, 
 in fact he was going to invite me to his next competition!
 
-[[continue|talk]]</tw-passagedata><tw-passagedata pid="26" name="Plum" tags="" position="725,350" size="100,100">Doctor Plum: I should have been ready to aid any person who needs help, 
+[[continue|talk]]</tw-passagedata><tw-passagedata pid="26" name="Plum" tags="" position="725,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/doctor.gif&quot; align=&quot;right&quot;/&gt;
+Doctor Plum: I should have been ready to aid any person who needs help, 
 this is my fault!
 
 By the way, the bathroom door tends to lock on itself. If it does just type in the password 1508
 
-[[continue|talk]]</tw-passagedata><tw-passagedata pid="27" name="Sun" tags="" position="850,350" size="100,100">Chef Sun: This is a travesty, all I wanted to do was cook for people.
+[[continue|talk]]</tw-passagedata><tw-passagedata pid="27" name="Sun" tags="" position="850,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/c2f040e4e5b16ca1ac2a498dea9ef6d2f3a20d6c/media/character/cook.gif&quot; align=&quot;right&quot;/&gt;
+Chef Sun: This is a travesty, all I wanted to do was cook for people.
 
-[[continue|talk]]</tw-passagedata><tw-passagedata pid="28" name="done" tags="" position="975,350" size="100,100">Check the [[Bathroom|bathroom]] or [[Kitchen|kitchen]]?</tw-passagedata><tw-passagedata pid="29" name="bathroom" tags="" position="1100,350" size="100,100">You close the door which activates a blue light system, there is something written on the glass in lipstick:
+[[continue|talk]]</tw-passagedata><tw-passagedata pid="28" name="done" tags="" position="975,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+Check the [[Bathroom|bathroom]] or [[Kitchen|kitchen]]?</tw-passagedata><tw-passagedata pid="29" name="bathroom" tags="" position="1100,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You close the door which activates a blue light system, there is something written on the glass in lipstick:
 
 &quot;I am the best, nobody else can be&quot;
 
 Detective Shadow: Humble...
 
-[[exit bathroom|exit bathroom]]</tw-passagedata><tw-passagedata pid="30" name="exit bathroom" tags="" position="1225,350" size="100,100">You try to exit but the door is locked.
+[[exit bathroom|exit bathroom]]</tw-passagedata><tw-passagedata pid="30" name="exit bathroom" tags="" position="1225,350" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/cd.png&quot; align=&quot;right&quot;/&gt;
+You try to exit but the door is locked.
 
 Type in the password: &lt;&lt;textbox &quot;$num_password&quot; &quot;&quot; &quot;Evaluate Num Password&quot; autofocus&gt;&gt;
 &lt;&lt;set $seconds to 15&gt;&gt;
@@ -281,11 +294,14 @@ Type in the password: &lt;&lt;textbox &quot;$num_password&quot; &quot;&quot; &qu
         You break down the door but in turn break your right hand.
         [[ouch|ouch]]
     
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="break hand" tags="" position="225,475" size="100,100">You break down the door but in turn break your right hand.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="break hand" tags="" position="225,475" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You break down the door but in turn break your right hand.
 
-[[ouch|ouch]]</tw-passagedata><tw-passagedata pid="33" name="ouch" tags="" position="350,475" size="100,100">You head out and return to the main lobby to see that Doctor Plum has been murdered!
+[[ouch|ouch]]</tw-passagedata><tw-passagedata pid="33" name="ouch" tags="" position="350,475" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You head out and return to the main lobby to see that Doctor Plum has been murdered!
 
-[[oh dear|rip plum]]</tw-passagedata><tw-passagedata pid="34" name="rip plum" tags="" position="475,475" size="100,100">You see Princess Orchid and Chef Sun state at each other and point in their respective directions.
+[[oh dear|rip plum]]</tw-passagedata><tw-passagedata pid="34" name="rip plum" tags="" position="475,475" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png&quot;/&gt; &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif&quot;/&gt;
+You see Princess Orchid and Chef Sun state at each other and point in their respective directions.
 
 Princess Orchid: He did it!
 
@@ -295,12 +311,17 @@ Chef Sun: She did it!
 Detective Shadow: Just my luck...
 
 You put them both in handcuffs to restrain them from moving until the killer is figured out.
+&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/twelve-oclock_1f55b.png&quot; align=&quot;right&quot;/&gt;
+Lights flicker, part of the engine was shut down, decreased time limit.
 
-10 minutes remain
+&lt;div style=&quot;text-align: right; padding-left:30px&quot;&gt;10 minutes remain&lt;/div&gt;
 
-[[I know who it is|orchid or sun]] or [[Keep searching|keep searching]]</tw-passagedata><tw-passagedata pid="35" name="orchid or sun" tags="" position="600,475" size="100,100">Who is the killer?
 
-[[Princess Orchid|lose]] or [[Chef Sun|win]]</tw-passagedata><tw-passagedata pid="36" name="keep searching" tags="" position="725,475" size="100,100">Detective Shadow: Don&#39;t move, either of you.
+[[I know who it is|orchid or sun]] or [[Keep searching|keep searching]]</tw-passagedata><tw-passagedata pid="35" name="orchid or sun" tags="" position="600,475" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png&quot;/&gt; &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif&quot;/&gt;
+Who is the killer?
+
+[[Princess Orchid|lose]] or [[Chef Sun|win]]</tw-passagedata><tw-passagedata pid="36" name="keep searching" tags="" position="725,475" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png&quot;/&gt; &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_flip.gif&quot;/&gt; &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+Detective Shadow: Don&#39;t move, either of you.
 
 Princess Orchid: Can you at least pass me the bottle of wine Chef Sun brought?
 
@@ -308,20 +329,26 @@ Chef Sun: Hey! That is for me!
 
 Do you give Princess Orchid the wine?
     
-    [[Yes|give orchid wine]] or [[No|dont give orchid wine]]</tw-passagedata><tw-passagedata pid="37" name="give orchid wine" tags="" position="850,475" size="100,100">&lt;&lt;set $orchid_poisoned to 1&gt;&gt;
+    [[Yes|give orchid wine]] or [[No|dont give orchid wine]]</tw-passagedata><tw-passagedata pid="37" name="give orchid wine" tags="" position="850,475" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess.gif&quot; align=&quot;right&quot;/&gt;
+&lt;&lt;set $orchid_poisoned to 1&gt;&gt;
 Princess Orchid: Thank you.
 
-You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.</tw-passagedata><tw-passagedata pid="38" name="dont give orchid wine" tags="" position="975,475" size="100,100">Princess Orchid: Ugh, can&#39;t have anything around here
+You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.</tw-passagedata><tw-passagedata pid="38" name="dont give orchid wine" tags="" position="975,475" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess.gif&quot; align=&quot;right&quot;/&gt;
+Princess Orchid: Ugh, can&#39;t have anything around here
 
-You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.</tw-passagedata><tw-passagedata pid="39" name="back to kitchen" tags="" position="1100,475" size="100,100">Detective Shadow: Who could it be? So many people have died already, I need to figure this out.
+You decide to [[go back|back to kitchen]] to the kitchen to collect your thoughts.</tw-passagedata><tw-passagedata pid="39" name="back to kitchen" tags="" position="1100,475" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+Detective Shadow: Who could it be? So many people have died already, I need to figure this out.
 
 You notice another bottle of wine, do you drink it?
 
-[[Yes|poisoned]] or [[No|not poisoned]]</tw-passagedata><tw-passagedata pid="40" name="poisoned" tags="" position="1225,475" size="100,100">Your vision starts to get hazy as you collaspe to the ground, Chef Sun&#39;s wine was poison, 
+[[Yes|poisoned]] or [[No|not poisoned]]</tw-passagedata><tw-passagedata pid="40" name="poisoned" tags="" position="1225,475" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective_die.png&quot;/&gt;
+Your vision starts to get hazy as you collaspe to the ground, Chef Sun&#39;s wine was poison, 
 
-you lose</tw-passagedata><tw-passagedata pid="41" name="not poisoned" tags="" position="100,600" size="100,100">You head back to the main lobby:
+you lose</tw-passagedata><tw-passagedata pid="41" name="not poisoned" tags="" position="100,600" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You head back to the main lobby:
 
 &lt;&lt;if $orchid_poisoned is 1&gt;&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png&quot;/&gt; &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_die.png&quot;/&gt; &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
     Princess Orchid is dead, folded over the table, 
     Chef Sun has gotten out of the handcuffs and now has a firearm.
 
@@ -335,6 +362,7 @@ you lose</tw-passagedata><tw-passagedata pid="41" name="not poisoned" tags="" po
     [[Be quick!|dodge up]]
 
     &lt;&lt;else&gt;&gt;
+    &lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
     Alright I think I know who it is.
 
     [[Make your decision|orchid or sun]]
@@ -431,17 +459,21 @@ Right: &lt;&lt;textbox &quot;$dodge_right&quot; &quot;&quot; &quot;check dodge r
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;goto &quot;dodge bullet lose&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="dodge bullet win" tags="" position="100,725" size="100,100">You successfully dodge all of Chef Sun&#39;s bullets, grab the handcuffs and arrest him
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="dodge bullet win" tags="" position="100,725" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You successfully dodge all of Chef Sun&#39;s bullets, grab the handcuffs and arrest him
 
 The police arrive at the plane where Chef Sun is arrested and taken away, 
 Shadow makes his detective conference in time and is given a badge of honour for his work, 
-solving another mystery.</tw-passagedata><tw-passagedata pid="52" name="dodge bullet lose" tags="" position="225,725" size="100,100">You fail to dodge Chef Sun&#39;s bullets,
+solving another mystery.</tw-passagedata><tw-passagedata pid="52" name="dodge bullet lose" tags="" position="225,725" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective_die.png&quot;/&gt;
+You fail to dodge Chef Sun&#39;s bullets,
 
-you lose.</tw-passagedata><tw-passagedata pid="53" name="kitchen" tags="" position="350,725" size="100,100">You see an open cabinet with a note and a key in it.
+you lose.</tw-passagedata><tw-passagedata pid="53" name="kitchen" tags="" position="350,725" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You see an open cabinet with a note and a key in it.
 
 A window breaks open and things are flying out...
 
-[[Act fast!|choice]]</tw-passagedata><tw-passagedata pid="54" name="choice" tags="" position="475,725" size="100,100">Which do you grab?
+[[Act fast!|choice]]</tw-passagedata><tw-passagedata pid="54" name="choice" tags="" position="475,725" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/time/cd.png&quot; align=&quot;right&quot;/&gt;
+Which do you grab?
 &lt;&lt;set $seconds to 15&gt;&gt;
 
 &lt;&lt;include Timer&gt;&gt;
@@ -482,25 +514,26 @@ A window breaks open and things are flying out...
             &lt;&lt;stop&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="Time up" tags="" position="975,725" size="100,100">Both objects flew out the window...
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="Time up" tags="" position="975,725" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+Both objects flew out the window...
 
-[[Make your choice|decide]] or [[keep searching|ouch]]</tw-passagedata><tw-passagedata pid="59" name="choose_note" tags="" position="1100,725" size="100,100">You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
+[[Make your choice|decide]] or [[keep searching|ouch]]</tw-passagedata><tw-passagedata pid="59" name="choose_note" tags="" position="1100,725" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+You find a note for steak recipes, one that matches the handwriting from the other note you found earlier
 
-[[Make your decision|decide]]? or [[keep searching|ouch]]?</tw-passagedata><tw-passagedata pid="60" name="choose_key" tags="" position="1225,725" size="100,100">The key allows you to acces a separate door, hidden behind the counter.
+[[Make your decision|decide]]? or [[keep searching|ouch]]?</tw-passagedata><tw-passagedata pid="60" name="choose_key" tags="" position="1225,725" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif&quot; align=&quot;right&quot;/&gt;
+The key allows you to acces a separate door, hidden behind the counter.
 
 Do you open the door?
 
-[[Yes|open_door]] or [[No|ouch]]</tw-passagedata><tw-passagedata pid="61" name="open_door" tags="" position="100,850" size="100,100">The door flies open and you get sucked out of the plane and fall to your doom.
+[[Yes|open_door]] or [[No|ouch]]</tw-passagedata><tw-passagedata pid="61" name="open_door" tags="" position="100,850" size="100,100">&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective_die.png&quot; align=&quot;right&quot;/&gt;
+The door flies open and you get sucked out of the plane and fall to your doom.
 
-The end.</tw-passagedata><tw-passagedata pid="62" name="decide" tags="" position="225,850" size="100,100">&lt;&lt;audio &quot;exp3&quot; stop&gt;&gt;
-&lt;&lt;audio &quot;decision&quot; play&gt;&gt;
-&lt;&lt;audio &quot;decision&quot; loop&gt;&gt;
-I believe the killer is...
-
+The end.</tw-passagedata><tw-passagedata pid="62" name="decide" tags="" position="225,850" size="100,100">I believe the killer is...
+&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.gif&quot; align=&quot;right&quot;/&gt;
 [[Chef Sun|win]]
-
+&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess.gif&quot; align=&quot;right&quot;/&gt;
 [[Princess Orchid|lose]]
-
+&lt;img src=&quot;https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/doctor.gif&quot; align=&quot;right&quot;/&gt;
 [[Doctor Plum|lose]]</tw-passagedata><tw-passagedata pid="63" name="win" tags="" position="350,850" size="100,100">&lt;&lt;audio &quot;decision&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;happyhour&quot; play&gt;&gt;
 Correct!
