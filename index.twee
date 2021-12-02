@@ -385,15 +385,17 @@ You notice another bottle of wine, do you drink it?
 [[Yes|poisoned]] or [[No|not poisoned]]
 
 :: poisoned
-
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective_die.png"/>
 Your vision starts to get hazy as you collaspe to the ground, Chef Sun's wine was poison, 
 
 you lose
 
 :: not poisoned
+<img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
 You head back to the main lobby:
 
 <<if $orchid_poisoned is 1>>
+    <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/cook.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/princess_die.png"/> <img src="https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/character/detective.gif" align="right"/>
     Princess Orchid is dead, folded over the table, 
     Chef Sun has gotten out of the handcuffs and now has a firearm.
 
