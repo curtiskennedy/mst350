@@ -29,8 +29,8 @@ Soaring Shadow
 :: StoryInit
 
 <<cacheaudio "title" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/theme.WAV">>
-<<cacheaudio "happyhour" "MP3|https://github.com/curtiskennedy/mst350/blob/3948e382a388c5db8c84a2ae8dc67fd8f90832f7/media/a%20happly%20hour.MP3">>
-<<cacheaudio "exp1" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring.WAV">>
+<<cacheaudio "happyhour" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/a%20happly%20hour.WAV">>
+<<cacheaudio "rushing" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/media/countdown/rushing.WAV">>
 <<cacheaudio "exp2" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring2.WAV">>
 <<cacheaudio "exp3" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/exploring3.WAV">>
 <<cacheaudio "mys1" "wav|https://raw.githubusercontent.com/curtiskennedy/mst350/main/dist/media/mystery1.WAV">>
